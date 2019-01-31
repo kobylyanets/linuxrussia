@@ -1,0 +1,44 @@
+// Importing variables
+@import './variables';
+
+// Importing font awesome
+$fa-font-path:"../../node_modules/@fortawesome/fontawesome-free/webfonts";
+@import '../../node_modules/@fortawesome/fontawesome-free/scss/fontawesome';
+@import '../../node_modules/@fortawesome/fontawesome-free/scss/regular';
+@import '../../node_modules/@fortawesome/fontawesome-free/scss/solid';
+@import '../../node_modules/@fortawesome/fontawesome-free/scss/brands';
+
+// Importing Bulma from node_modules
+@import '../../node_modules/bulma/bulma';
+
+// Importing Spacing Helpers for Bulma
+@import './spacing';
+
+.post-info {
+  font-size: 0.875em !important;
+  margin-bottom: 0.875em !important;
+
+  :first-child > i {
+    margin-left: -0.25rem !important;
+  }
+  :not(:last-child) > span {
+    margin-right: 1rem;
+  }
+}
+
+.title > a {
+  color: $grey-darker
+}
+
+.title > a:hover {
+  color: $blue
+}
+
+.side-title {
+  border-bottom: 2px solid $cyan;
+  margin-bottom: 10px;
+}
+
+span > .fa-telegram {
+  color: #0088cc!important;
+}
