@@ -2,6 +2,7 @@ import React, { Fragment } from 'react';
 import { graphql } from 'gatsby';
 import Layout from '../layouts/layout';
 import PostHeader from '../components/postHeader';
+import Pagination from '../components/Pationation/Pagination';
 
 const ExcerptPostItem = ({ post }) => {
   const {
@@ -40,6 +41,8 @@ const BlogPage = ({ data, ...props }) => {
           <ExcerptPostItem post={post} />
         ))}
       </div>
+
+      <Pagination {...{ index, totalPages }} />
     </Layout>
   );
 };

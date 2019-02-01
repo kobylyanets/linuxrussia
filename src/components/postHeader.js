@@ -25,10 +25,7 @@ const PostHeader = ({
   const titleWrapProps = url ? { to: `${url}.html` } : {};
   return (
     <>
-
-      {featuredImage && (
-        <Img fluid={featuredImage.childImageSharp.fluid} />
-      )}
+      {featuredImage && <Img fluid={featuredImage.childImageSharp.fluid} />}
 
       <div className="title is-size-3">
         <TitleWrap {...titleWrapProps}>{title}</TitleWrap>
