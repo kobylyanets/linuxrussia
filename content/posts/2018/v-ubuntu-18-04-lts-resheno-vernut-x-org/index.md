@@ -37,4 +37,3 @@ _Источник: [OpenNews](http://opennet.ru/opennews/art.shtml?num=47967)_
 
 Wayland будет предустановлен в системе Ubuntu 18.04. Но не будет выбран по умолчанию. Так как это всё-таки LTS версия, поэтому должна быть хоть какая-то стабильность. А как вы относитесь к этому сообщению от разработчиков Ubuntu?
 
-<script async src="https://simpleoneline.online/online.js?js=v.1.0.6" type="text/javascript"></script>

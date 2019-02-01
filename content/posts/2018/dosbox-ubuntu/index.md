@@ -127,4 +127,3 @@ sudo apt remove dosbox
 
 Ну или найдите dosbox в Центре приложений Ubuntu в списке установленных программ и удалите.
 
-<script async src="https://simpleoneline.online/online.js?js=v.1.0.6" type="text/javascript"></script>

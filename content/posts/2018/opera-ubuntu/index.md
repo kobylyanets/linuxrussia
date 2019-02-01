@@ -212,4 +212,3 @@ sudo rm /etc/apt/sources.list.d/opera\*
 
 ### [Вернуться к оглавлению ->](#contents)
 
-<script async src="https://simpleoneline.online/online.js?js=v.1.0.6" type="text/javascript"></script>

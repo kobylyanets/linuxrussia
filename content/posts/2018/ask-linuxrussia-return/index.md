@@ -58,4 +58,3 @@ url: "ask-linuxrussia-return"
 
 Если возникнут какие-либо проблемы с сайтом вопросов и ответов, всегда можете написать здесь или по электронной почте: [admin@linuxrussia.com](mailto:admin@linuxrussia.com) .
 
-<script async src="https://simpleoneline.online/online.js?js=v.1.0.6" type="text/javascript"></script>

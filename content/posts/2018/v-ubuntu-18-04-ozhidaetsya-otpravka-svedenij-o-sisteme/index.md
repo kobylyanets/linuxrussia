@@ -29,4 +29,3 @@ date: "2018-02-17"
 
 _Источник: [OpenNews: В Ubuntu 18.04 ожидается отправка сведений о системе и режим минимальной установки](http://www.opennet.ru/opennews/art.shtml?num=48079)_
 
-<script async src="https://simpleoneline.online/online.js?js=v.1.0.6" type="text/javascript"></script>

@@ -95,4 +95,3 @@ sudo apt remove gdebi
 
 sudo apt remove gdebi-kde
 
-<script async src="https://simpleoneline.online/online.js?js=v.1.0.6" type="text/javascript"></script>

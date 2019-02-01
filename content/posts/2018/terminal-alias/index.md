@@ -142,4 +142,3 @@ P.S.
 
 В данной статье было подробно создание alias в Ubuntu. Если пользуетесь этим удобным инструментом, можете поделиться в комментариях своим набором алиасов.  
 
-<script async src="https://simpleoneline.online/online.js?js=v.1.0.6" type="text/javascript"></script>

@@ -124,4 +124,3 @@ sudo rm /etc/apt/sources.list.d/teamviewer.list
 
 Всё, теперь приложение Teamviewer удалено из системы Ubuntu.
 
-<script async src="https://simpleoneline.online/online.js?js=v.1.0.6" type="text/javascript"></script>

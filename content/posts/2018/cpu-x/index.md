@@ -107,4 +107,3 @@ sudo rm /etc/apt/sources.list.d/cpu-x.list
 
 Есть задумка написать несколько статей о программах для просмотра информации о компьютере и системе. Пишите в комментариях, какие вы знаете и используете. 
 
-<script async src="https://simpleoneline.online/online.js?js=v.1.0.6" type="text/javascript"></script>

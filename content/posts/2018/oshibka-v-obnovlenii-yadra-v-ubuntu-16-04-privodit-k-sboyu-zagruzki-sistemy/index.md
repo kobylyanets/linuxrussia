@@ -9,4 +9,3 @@ date: "2018-01-11"
 
 Источник: [http://www.opennet.ru/opennews/art.shtml?num=47884](http://www.opennet.ru/opennews/art.shtml?num=47884)
 
-<script async src="https://simpleoneline.online/online.js?js=v.1.0.6" type="text/javascript"></script>

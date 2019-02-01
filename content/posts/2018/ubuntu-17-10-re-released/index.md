@@ -122,4 +122,3 @@ sudo dpkg -r linux-image-4.15.0-041500rc6-generic
 
 Советовал бы я ставить Ubuntu 17.10.1? Однозначно нет, хоть там и появился очень симпатичный "подправленный" Gnome, который мне очень понравился. Лучше подождать LTS (с долгосрочной поддержкой) релиз Ubuntu 18.04, выход которого будет в апреле 2018 года. Ждать не так уж и долго.
 
-<script async src="https://simpleoneline.online/online.js?js=v.1.0.6" type="text/javascript"></script>
