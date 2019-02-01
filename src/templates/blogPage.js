@@ -61,7 +61,7 @@ export const query = graphql`
         node {
           frontmatter {
             title
-            date
+            date(formatString: "DD MMM YYYY", locale: "RU")
             url
             author
             category
