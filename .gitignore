@@ -58,3 +58,6 @@ package-lock.json
 
 # starters are special; we want to persist the lock files
 !starters/*/package-lock.json
+
+# exclude content folder with blog posts
+content/
