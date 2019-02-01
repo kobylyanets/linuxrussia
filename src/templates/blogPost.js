@@ -2,14 +2,17 @@ import React from 'react';
 import Layout from '../layouts/layout';
 import { graphql } from 'gatsby';
 import PostHeader from '../components/postHeader';
+import Img from 'gatsby-image';
 
 function BlogPost(props) {
   const post = props.data.post;
-  const { title, date, author, category } = post.frontmatter;
+  const { title, date, author, category, featuredImage } = post.frontmatter;
 
   return (
     <Layout>
       <article>
+        {featuredImage && <Img fluid={featuredImage.childImageSharp.fluid} />}
+
         <PostHeader
           title={title}
           date={date}
@@ -38,6 +41,25 @@ export const query = graphql`
         url
         author
         category
+        featuredImage {
+          id
+          childImageSharp {
+            fluid {
+              base64
+              tracedSVG
+              aspectRatio
+              src
+              srcSet
+              srcWebp
+              srcSetWebp
+              sizes
+              originalImg
+              originalName
+              presentationWidth
+              presentationHeight
+            }
+          }
+        }
       }
       html
       timeToRead

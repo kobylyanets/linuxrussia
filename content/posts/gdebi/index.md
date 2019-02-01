@@ -1,7 +1,8 @@
 ---
 title: "Настройка Ubuntu после установки"
-date: 2014-06-06 20:00:00
+date: 2019-01-01 20:00:00
 url: "gdebi-deb-ubuntu"
+featuredImage: "images/gdebi_logo.png"
 ---
 
 

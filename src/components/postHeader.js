@@ -1,5 +1,6 @@
 import React from 'react';
 import { Link } from 'gatsby';
+import Img from 'gatsby-image';
 
 const PostHeaderItem = ({ iconClasses, text }) => {
   return (
@@ -18,11 +19,17 @@ const PostHeader = ({
   category,
   comments,
   readTime,
+  featuredImage,
 }) => {
   const TitleWrap = url ? Link : React.Fragment;
   const titleWrapProps = url ? { to: `${url}.html` } : {};
   return (
     <>
+
+      {featuredImage && (
+        <Img fluid={featuredImage.childImageSharp.fluid} />
+      )}
+
       <div className="title is-size-3">
         <TitleWrap {...titleWrapProps}>{title}</TitleWrap>
       </div>

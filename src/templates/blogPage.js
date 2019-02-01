@@ -4,7 +4,14 @@ import Layout from '../layouts/layout';
 import PostHeader from '../components/postHeader';
 
 const ExcerptPostItem = ({ post }) => {
-  const { title, date, url, author, category } = post.frontmatter;
+  const {
+    title,
+    date,
+    url,
+    author,
+    category,
+    featuredImage,
+  } = post.frontmatter;
   return (
     <div className="block">
       <PostHeader
@@ -13,6 +20,7 @@ const ExcerptPostItem = ({ post }) => {
         author={author}
         category={category}
         readTime={post.timeToRead}
+        featuredImage={featuredImage}
         url={url}
       />
       <div className="content">{post.excerpt}</div>
@@ -54,6 +62,25 @@ export const query = graphql`
             url
             author
             category
+            featuredImage {
+              id
+              childImageSharp {
+                fluid {
+                  base64
+                  tracedSVG
+                  aspectRatio
+                  src
+                  srcSet
+                  srcWebp
+                  srcSetWebp
+                  sizes
+                  originalImg
+                  originalName
+                  presentationWidth
+                  presentationHeight
+                }
+              }
+            }
           }
           timeToRead
           excerpt(pruneLength: 300)
