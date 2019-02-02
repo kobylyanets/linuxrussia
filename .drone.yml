@@ -1,0 +1,9 @@
+---
+pipeline:
+  publish:
+    image: plugins/docker
+    repo: builder
+    tag: latest
+    dockerfile: ./docker/Dockerfile
+
+branches: [master]
