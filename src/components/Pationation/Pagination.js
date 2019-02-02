@@ -54,7 +54,6 @@ const Pagination = ({ index: currentPageIndex, totalPages }) => {
           След.
         </Link>
       ) : null}
-
     </nav>
   );
 };
