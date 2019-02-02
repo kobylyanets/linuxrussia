@@ -1,3 +1,3 @@
-##Сайт LinuxRussia.com
+## Сайт LinuxRussia.com
 
-Репозиторий сайта LinuxRussia.com
+Репозиторий исходников сайта LinuxRussia.com
