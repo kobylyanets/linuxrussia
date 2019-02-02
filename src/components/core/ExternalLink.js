@@ -1,8 +1,9 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import _ from 'lodash.isempty';
 
 const ExternalLink = ({ to, className, children, ...props }) => {
-  if (!to || !children) {
+  if (_.isEmpty(to) || _.isEmpty(children)) {
     return null;
   }
   return (
