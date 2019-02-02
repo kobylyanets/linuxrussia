@@ -1,9 +1,10 @@
 ---
 pipeline:
-  publish:
-    image: plugins/docker
-    repo: builder
-    tag: latest
-    dockerfile: ./docker/Dockerfile
+  build:
+    image: docker
+    commands:
+      - docker build --tag builder --file ./docker/Dockerfile .
+    volumes:
+      - /var/run/docker.sock:/var/run/docker.sock
 
 branches: [master]
