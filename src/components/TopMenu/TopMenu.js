@@ -2,7 +2,7 @@ import React from 'react';
 import { Link } from 'gatsby';
 import menuConfig from '../../configs/menuConfig';
 
-class TopBarMenu extends React.Component {
+class TopMenu extends React.Component {
   state = { showMenu: false };
 
   toggleMenu = () => {
@@ -58,4 +58,4 @@ class TopBarMenu extends React.Component {
   }
 }
 
-export default TopBarMenu;
+export default TopMenu;

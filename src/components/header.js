@@ -1,6 +1,6 @@
 import React from 'react';
 import Helmet from 'react-helmet';
-import TopBarMenu from './topBarMenu/topBarMenu';
+import TopMenu from './TopMenu/TopMenu';
 
 class Header extends React.Component {
   render() {
@@ -11,7 +11,7 @@ class Header extends React.Component {
             class: 'has-navbar-fixed-top',
           }}
         />
-        <TopBarMenu />
+        <TopMenu />
       </>
     );
   }
