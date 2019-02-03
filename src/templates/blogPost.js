@@ -3,6 +3,7 @@ import Layout from '../layouts/layout';
 import { graphql } from 'gatsby';
 import PostHeader from '../components/postHeader';
 import Img from 'gatsby-image';
+import SEO from '../components/seo';
 
 function BlogPost(props) {
   const post = props.data.post;
@@ -10,9 +11,9 @@ function BlogPost(props) {
 
   return (
     <Layout>
+      <SEO title={title}/>
       <article>
         {featuredImage && <Img fluid={featuredImage.childImageSharp.fluid} />}
-
         <PostHeader
           title={title}
           date={date}

@@ -3,6 +3,7 @@ import { graphql } from 'gatsby';
 import Layout from '../layouts/layout';
 import PostHeader from '../components/postHeader';
 import Pagination from '../components/Pationation/Pagination';
+import SEO from '../components/seo';
 
 const ExcerptPostItem = ({ post }) => {
   const {
@@ -52,7 +53,7 @@ export default BlogPage;
 export const query = graphql`
   query ExcerptListQuery($skip: Int!, $limit: Int!) {
     allMarkdownRemark(
-      filter: { fileAbsolutePath: { regex: "/posts/" } }
+      filter: { fileAbsolutePath: { regex: "/posts/" }, frontmatter: {status: { ne: "template" } } }
       sort: { fields: [frontmatter___date], order: DESC }
       skip: $skip
       limit: $limit
@@ -75,7 +76,7 @@ export const query = graphql`
             }
           }
           timeToRead
-          excerpt(pruneLength: 300)
+          excerpt(pruneLength: 300, format: PLAIN)
         }
       }
     }
