@@ -1,13 +1,14 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import _ from 'lodash.isempty';
+import isEmpty from 'lodash.isempty';
 
-const ExternalLink = ({ to, className, children, ...props }) => {
-  if (_.isEmpty(to) || _.isEmpty(children)) {
+const ExternalLink = ({ to, className, children, key }) => {
+  if (isEmpty(to) || isEmpty(children)) {
     return null;
   }
   return (
     <a
+      key={key}
       href={to}
       className={className}
       target="_blank"
@@ -20,11 +21,12 @@ const ExternalLink = ({ to, className, children, ...props }) => {
 
 ExternalLink.propTypes = {
   to: PropTypes.string.isRequired,
+  children: PropTypes.oneOfType([
+    PropTypes.arrayOf(PropTypes.node),
+    PropTypes.node,
+  ]).isRequired,
   className: PropTypes.string,
-};
-
-ExternalLink.defaultProps = {
-  className: undefined,
+  key: PropTypes.number,
 };
 
 export default ExternalLink;

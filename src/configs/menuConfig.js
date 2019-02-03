@@ -2,35 +2,35 @@ export default {
   menuLinks: [
     {
       title: 'Программы',
-      link: '/programs',
+      to: '/programs',
     },
     {
       title: 'Руководства',
-      link: '/guides',
+      to: '/guides',
     },
-    // {
-    //   title: 'Игры',
-    //   link: '/games',
-    // },
+    {
+      title: 'Игры',
+      to: '/games',
+    },
     {
       title: 'Темы',
-      link: '/themes',
+      to: '/themes',
     },
     {
       title: 'Новости',
-      link: '/news',
+      to: '/news',
     },
     {
       title: 'Статьи',
-      link: '/articles',
+      to: '/articles',
     },
     {
       title: 'О сайте',
-      link: '/about',
+      to: '/about',
     },
     {
       title: 'Ask LinuxRussia',
-      link: 'http://ask.linuxrussia.com/',
+      to: 'https://ask.linuxrussia.com/',
       isExternal: true,
     },
   ],
