@@ -1,4 +1,4 @@
-import React, { Fragment } from 'react';
+import React from 'react';
 import { graphql } from 'gatsby';
 import Layout from '../layouts/layout';
 import PostHeader from '../components/postHeader';
@@ -37,8 +37,8 @@ const BlogPage = ({ data, ...props }) => {
   return (
     <Layout>
       <div className="content">
-        {posts.map(post => (
-          <ExcerptPostItem post={post} />
+        {posts.map((post, index) => (
+          <ExcerptPostItem key={index} post={post} />
         ))}
       </div>
 

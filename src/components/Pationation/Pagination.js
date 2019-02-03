@@ -36,7 +36,7 @@ const Pagination = ({ index: currentPageIndex, totalPages }) => {
               </a>
             </li>
           ) : (
-            <li>
+            <li key={index}>
               <Link
                 className="pagination-link"
                 aria-label="Goto page 1"
