@@ -6,6 +6,7 @@ import Header from '../components/header';
 import '../styles/style.scss';
 import Footer from '../components/footer';
 import SideBar from '../components/SideBar/SideBar';
+import SEO from '../components/seo';
 
 const Layout = ({ children }) => (
   <StaticQuery
@@ -13,13 +14,14 @@ const Layout = ({ children }) => (
       query SiteTitleQuery {
         site {
           siteMetadata {
-            title
+            description
           }
         }
       }
     `}
     render={data => (
       <>
+        <SEO title={data.site.siteMetadata.description} />
         <Header />
         <section className="section">
           <div className="container">
