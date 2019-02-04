@@ -53,7 +53,10 @@ export default BlogPage;
 export const query = graphql`
   query ExcerptListQuery($skip: Int!, $limit: Int!) {
     allMarkdownRemark(
-      filter: { fileAbsolutePath: { regex: "/posts/" }, frontmatter: {status: { ne: "template" } } }
+      filter: {
+        fileAbsolutePath: { regex: "/posts/" }
+        frontmatter: { status: { ne: "template" } }
+      }
       sort: { fields: [frontmatter___date], order: DESC }
       skip: $skip
       limit: $limit
