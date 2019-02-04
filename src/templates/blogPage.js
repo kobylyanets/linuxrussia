@@ -57,7 +57,7 @@ export const query = graphql`
         fileAbsolutePath: { regex: "/posts/" }
         frontmatter: { status: { ne: "template" } }
       }
-      sort: { fields: [frontmatter___date], order: DESC }
+      sort: {order: DESC, fields: [frontmatter___date]} 
       skip: $skip
       limit: $limit
     ) {

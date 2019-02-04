@@ -11,7 +11,7 @@ function BlogPost(props) {
 
   return (
     <Layout>
-      <SEO title={title}/>
+      <SEO title={title} />
       <article>
         {featuredImage && <Img fluid={featuredImage.childImageSharp.fluid} />}
         <PostHeader
