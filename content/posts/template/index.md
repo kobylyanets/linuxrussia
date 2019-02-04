@@ -4,7 +4,6 @@ author: "Edward Kobylyanets"
 date: 2019-01-01
 url: "/gdebi-deb-ubuntu"
 category: "programs"
-featuredImage: "images/gdebi_logo.png"
 status: "template"
 ---
 
