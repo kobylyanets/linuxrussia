@@ -3,7 +3,14 @@ import PropTypes from 'prop-types';
 import Helmet from 'react-helmet';
 import { StaticQuery, graphql } from 'gatsby';
 
-const openGraphTags = (url, site_name, title, description, image) => {
+const openGraphTags = (
+  url,
+  site_name,
+  title,
+  description,
+  image,
+  isBlogPost
+) => {
   return [
     {
       property: 'og:url',
@@ -24,6 +31,10 @@ const openGraphTags = (url, site_name, title, description, image) => {
     {
       property: 'og:image',
       content: image,
+    },
+    {
+      property: 'og:type',
+      content: isBlogPost ? 'article' : 'website',
     },
   ];
 };
@@ -85,13 +96,17 @@ const SEO = props => {
   );
 };
 
+SEO.defaultProps = {
+  isBlogPost: false,
+};
+
 SEO.propTypes = {
   title: PropTypes.string,
 
   imageURL: PropTypes.string,
   description: PropTypes.string,
 
-  lang: PropTypes.string,
+  isBlogPost: PropTypes.bool,
   meta: PropTypes.array,
   keywords: PropTypes.arrayOf(PropTypes.string),
 };

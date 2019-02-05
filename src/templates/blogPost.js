@@ -24,6 +24,7 @@ function BlogPost(props) {
         imageURL={featuredImage.publicURL}
         description={excerpt}
         url={url}
+        isBlogPost
       />
       <article>
         {featuredImage && <Img fluid={featuredImage.childImageSharp.fluid} />}
