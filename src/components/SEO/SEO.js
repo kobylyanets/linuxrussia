@@ -86,7 +86,8 @@ const SEO = props => {
                   siteMetadata.site_name,
                   title,
                   description,
-                  image
+                  image,
+                  props.isBlogPost
                 )
               )}
           />
