@@ -6,23 +6,23 @@ import { StaticQuery, graphql } from 'gatsby';
 const openGraphTags = (url, site_name, title, description, image) => {
   return [
     {
-      name: 'og:url',
+      property: 'og:url',
       content: url,
     },
     {
-      name: 'og:site_name',
+      property: 'og:site_name',
       content: site_name,
     },
     {
-      name: 'og:title',
+      property: 'og:title',
       content: title,
     },
     {
-      name: 'og:description',
+      property: 'og:description',
       content: description,
     },
     {
-      name: 'og:image',
+      property: 'og:image',
       content: image,
     },
   ];
