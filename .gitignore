@@ -60,4 +60,4 @@ package-lock.json
 !starters/*/package-lock.json
 
 # exclude content folder with blog posts
-# content/
+content/
