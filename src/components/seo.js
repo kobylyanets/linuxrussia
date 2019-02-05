@@ -69,7 +69,7 @@ function SEO({ description, lang, meta, keywords, title }) {
 }
 
 SEO.defaultProps = {
-  lang: `en`,
+  lang: `ru`,
   meta: [],
   keywords: [],
 };
@@ -85,12 +85,25 @@ SEO.propTypes = {
 export default SEO;
 
 const detailsQuery = graphql`
-  query DefaultSEOQuery {
+  query DefaultSEOQuery123 {
     site {
       siteMetadata {
+        url
+        site_name
         title
         description
         author
+      }
+    }
+    logo: allImageSharp(
+      filter: { original: { src: { regex: "/linuxrussia-logo/" } } }
+    ) {
+      edges {
+        node {
+          original {
+            src
+          }
+        }
       }
     }
   }

@@ -1,8 +1,13 @@
 module.exports = {
   siteMetadata: {
-    title: `LinuxRussia.com`,
-    description: `Статьи о Linux / Ubuntu`,
-    author: `Edward Kobylyanets`,
+    url: 'https://fervent-babbage-4c9775.netlify.com/',
+    site_name: 'LinuxRussia.com',
+    title: 'Статьи о Linux / Ubuntu',
+    description: 'Настройка Linux / Ubuntu после установки. ' +
+      'Обзоры, описание установки и настройка приложений для Linux / Ubuntu.',
+    image: 'linuxrussia-logo.png',
+
+    author: 'Edward Kobylyanets',
   },
   plugins: [
     `gatsby-plugin-react-helmet`,

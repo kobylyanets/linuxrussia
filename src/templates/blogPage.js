@@ -3,7 +3,7 @@ import { graphql } from 'gatsby';
 import Layout from '../layouts/layout';
 import PostHeader from '../components/postHeader';
 import Pagination from '../components/Pationation/Pagination';
-import SEO from '../components/seo';
+import SEO from '../components/SEO/SEO';
 
 const ExcerptPostItem = ({ post }) => {
   const {
@@ -37,6 +37,7 @@ const BlogPage = ({ data, ...props }) => {
 
   return (
     <Layout>
+      <SEO />
       <div className="content">
         {posts.map((post, index) => (
           <ExcerptPostItem key={index} post={post} />
@@ -57,7 +58,7 @@ export const query = graphql`
         fileAbsolutePath: { regex: "/posts/" }
         frontmatter: { status: { ne: "template" } }
       }
-      sort: {order: DESC, fields: [frontmatter___date]} 
+      sort: { order: DESC, fields: [frontmatter___date] }
       skip: $skip
       limit: $limit
     ) {

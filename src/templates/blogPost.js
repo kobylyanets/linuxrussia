@@ -3,15 +3,28 @@ import Layout from '../layouts/layout';
 import { graphql } from 'gatsby';
 import PostHeader from '../components/postHeader';
 import Img from 'gatsby-image';
-import SEO from '../components/seo';
+import SEO from '../components/SEO/SEO';
 
 function BlogPost(props) {
   const post = props.data.post;
-  const { title, date, author, category, featuredImage } = post.frontmatter;
+  const {
+    title,
+    date,
+    author,
+    category,
+    featuredImage,
+    excerpt,
+    url,
+  } = post.frontmatter;
 
   return (
     <Layout>
-      <SEO title={title} />
+      <SEO
+        title={title}
+        imageURL={featuredImage.publicURL}
+        description={excerpt}
+        url={url}
+      />
       <article>
         {featuredImage && <Img fluid={featuredImage.childImageSharp.fluid} />}
         <PostHeader
@@ -44,6 +57,7 @@ export const query = graphql`
         category
         featuredImage {
           id
+          publicURL
           childImageSharp {
             fluid {
               ...GatsbyImageSharpFluid
@@ -52,6 +66,7 @@ export const query = graphql`
         }
       }
       html
+      excerpt
       timeToRead
     }
   }
