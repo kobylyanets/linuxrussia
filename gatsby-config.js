@@ -7,6 +7,7 @@ module.exports = {
       'Обзоры, описание установки и настройка приложений для Linux / Ubuntu.',
     image: 'linuxrussia-logo.png',
 
+    twitter: 'https://twitter.com/LinuxRussia',
     author: 'Edward Kobylyanets',
   },
   plugins: [

@@ -3,6 +3,31 @@ import PropTypes from 'prop-types';
 import Helmet from 'react-helmet';
 import { StaticQuery, graphql } from 'gatsby';
 
+const twitterCardTags = (twitter, title, description, image) => {
+  return [
+    {
+      name: `twitter:card`,
+      content: `summary`,
+    },
+    {
+      name: `twitter:creator`,
+      content: twitter,
+    },
+    {
+      name: `twitter:title`,
+      content: title,
+    },
+    {
+      name: `twitter:description`,
+      content: description,
+    },
+    {
+      name: `twitter:image`,
+      content: image,
+    },
+  ];
+};
+
 const openGraphTags = (
   url,
   site_name,
@@ -89,7 +114,8 @@ const SEO = props => {
                   image,
                   props.isBlogPost
                 )
-              )}
+              )
+              .concat(twitterCardTags(siteMetadata.twitter))}
           />
         );
       }}
@@ -123,6 +149,7 @@ const detailsQuery = graphql`
         title
         description
         author
+        twitter
       }
     }
     logo: allImageSharp(
