@@ -115,7 +115,9 @@ const SEO = props => {
                   props.isBlogPost
                 )
               )
-              .concat(twitterCardTags(siteMetadata.twitter))}
+              .concat(
+                twitterCardTags(siteMetadata.twitter, title, description, image)
+              )}
           />
         );
       }}
