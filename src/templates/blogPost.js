@@ -1,9 +1,11 @@
 import React from 'react';
+
 import Layout from '../layouts/layout';
 import { graphql } from 'gatsby';
 import PostHeader from '../components/postHeader';
 import Img from 'gatsby-image';
 import SEO from '../components/SEO/SEO';
+import ShareBlock from '../components/ShareBlock/ShareBlock';
 
 function BlogPost(props) {
   const post = props.data.post;
@@ -40,6 +42,11 @@ function BlogPost(props) {
           className="content"
           dangerouslySetInnerHTML={{ __html: post.html }}
         />
+
+        <hr style={{ height: '2px' }} />
+
+        <ShareBlock />
+
       </article>
     </Layout>
   );
