@@ -9,7 +9,14 @@ const util = require('util');
 
 const queryAllPosts = (graphql) => graphql(`
 {
-  posts: allMarkdownRemark(sort: {order: DESC, fields: [frontmatter___date]}, limit: 1000) {
+  posts: allMarkdownRemark(
+      filter: {
+        fileAbsolutePath: { regex: "/posts/" }
+        frontmatter: { status: { ne: "template" } }
+      }
+      sort: {order: DESC, fields: [frontmatter___date]} 
+      limit: 1000
+  ) {
     edges {
       node {
         id

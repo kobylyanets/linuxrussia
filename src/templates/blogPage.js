@@ -1,8 +1,9 @@
-import React, { Fragment } from 'react';
+import React from 'react';
 import { graphql } from 'gatsby';
 import Layout from '../layouts/layout';
 import PostHeader from '../components/postHeader';
 import Pagination from '../components/Pationation/Pagination';
+import SEO from '../components/SEO/SEO';
 
 const ExcerptPostItem = ({ post }) => {
   const {
@@ -36,9 +37,10 @@ const BlogPage = ({ data, ...props }) => {
 
   return (
     <Layout>
+      <SEO />
       <div className="content">
-        {posts.map(post => (
-          <ExcerptPostItem post={post} />
+        {posts.map((post, index) => (
+          <ExcerptPostItem key={index} post={post} />
         ))}
       </div>
 
@@ -52,8 +54,11 @@ export default BlogPage;
 export const query = graphql`
   query ExcerptListQuery($skip: Int!, $limit: Int!) {
     allMarkdownRemark(
-      filter: { fileAbsolutePath: { regex: "/posts/" } }
-      sort: { fields: [frontmatter___date], order: DESC }
+      filter: {
+        fileAbsolutePath: { regex: "/posts/" }
+        frontmatter: { status: { ne: "template" } }
+      }
+      sort: { order: DESC, fields: [frontmatter___date] }
       skip: $skip
       limit: $limit
     ) {
@@ -75,7 +80,7 @@ export const query = graphql`
             }
           }
           timeToRead
-          excerpt(pruneLength: 300)
+          excerpt(pruneLength: 300, format: PLAIN)
         }
       }
     }

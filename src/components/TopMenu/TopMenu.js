@@ -1,6 +1,7 @@
 import React from 'react';
 import { Link } from 'gatsby';
 import menuConfig from '../../configs/menuConfig';
+import TopMenuLinkList from './TopMenuLinkList';
 
 class TopMenu extends React.Component {
   state = { showMenu: false };
@@ -44,13 +45,7 @@ class TopMenu extends React.Component {
           </div>
 
           <div id="topNavbar" className={`navbar-menu ${cssActiveClass}`}>
-            <div className="navbar-end">
-              {this.links.map((link, index) => (
-                <Link key={index} className="navbar-item" to={link.link}>
-                  {link.title}
-                </Link>
-              ))}
-            </div>
+            <TopMenuLinkList links={this.links} />
           </div>
         </div>
       </nav>
