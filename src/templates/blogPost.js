@@ -50,7 +50,6 @@ function BlogPost(props) {
         <hr style={{ height: '4px' }} />
 
         <div id="mc-container" />
-
       </article>
     </Layout>
   );
