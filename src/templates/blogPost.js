@@ -47,6 +47,10 @@ function BlogPost(props) {
 
         <ShareBlock />
 
+        <hr style={{ height: '4px' }} />
+
+        <div id="mc-container" />
+
       </article>
     </Layout>
   );
