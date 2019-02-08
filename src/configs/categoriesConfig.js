@@ -34,7 +34,8 @@ const CategoriesInfo = {
   }
 };
 
-export {
+// CommonJS export for use in gatsby-node.js
+module.exports = {
   Categories,
   CategoriesInfo,
-}
+};

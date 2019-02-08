@@ -3,6 +3,7 @@
  *
  * @see: https://www.gatsbyjs.org/docs/node-apis/
  */
+const { CategoriesInfo } = require('./src/configs/categoriesConfig');
 const path = require(`path`);
 // const { createFilePath } = require(`gatsby-source-filesystem`);
 const util = require('util');
@@ -25,6 +26,7 @@ const queryAllPosts = (graphql) => graphql(`
           title
           date(formatString: "DD MMMM YYYY", locale: "RU")
           url
+          category
         }
       }
     }
@@ -77,6 +79,50 @@ exports.createPages = ({ actions, graphql }) => {
                   },
                 });
               });
+
+              // Create Category pages
+              // const categories = Array.from(Categories).forEach(category => {
+              //   console.log(category);
+              //
+              // });
+
+              for (const [category, categoryInfo] of Object.entries(CategoriesInfo)) {
+                // console.log(`${category} + ${categoryInfo}`);
+
+                const postsByCategory = allPosts.reduce(
+                  (acc, post) => {
+                    const { frontmatter } = post.node;
+                    if (!frontmatter.category) {
+                      return acc;
+                    }
+                    if (frontmatter.category && frontmatter.category.trim() === category.trim()) {
+                      return [...acc, post];
+                    }
+                    return acc;
+                  },
+                  []
+                );
+
+                // Create category pages
+                const totalPages = Math.ceil(postsByCategory.length / postsPerPage);
+                Array.from({ length: totalPages }).forEach((_, index) => {
+                  createPage({
+                    path: index === 0 ? `${categoryInfo.url}` : `${categoryInfo.url}/page-${index + 1}`,
+                    component: blogPageTemplate,
+                    context: {
+                      allPostsLength: postsByCategory.length,
+                      totalPages,
+                      index,
+                      limit: postsPerPage,
+                      skip: index * postsPerPage
+                    }
+                  });
+                });
+
+                postsByCategory.forEach(post => {
+                  console.log(util.inspect(post, false, null, true /* enable colors */));
+                });
+              }
 
             })
       );
