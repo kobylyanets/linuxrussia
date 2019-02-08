@@ -3,7 +3,6 @@
  *
  * See: https://www.gatsbyjs.org/docs/browser-apis/
  */
-// import '@fortawesome/fontawesome-free/scss/fontawesome.scss'
 
 const injectCackleCommentsScript = () => {
     const mc = document.createElement('script');
