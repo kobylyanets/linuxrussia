@@ -1,6 +1,6 @@
 module.exports = {
   siteMetadata: {
-    url: 'https://fervent-babbage-4c9775.netlify.com/',
+    url: 'https://linuxrussia.com/',
     site_name: 'LinuxRussia.com',
     title: 'Статьи о Linux / Ubuntu',
     description: 'Настройка Linux / Ubuntu после установки. ' +
