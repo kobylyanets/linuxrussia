@@ -139,9 +139,9 @@ exports.createPages = ({ actions, graphql }) => {
 
 
 
-                postsByCategory.forEach(post => {
-                  console.log(util.inspect(post, false, null, true /* enable colors */));
-                });
+                // postsByCategory.forEach(post => {
+                //   console.log(util.inspect(post, false, null, true /* enable colors */));
+                // });
               }
 
             })

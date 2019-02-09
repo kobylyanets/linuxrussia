@@ -4860,6 +4860,11 @@ gatsby-plugin-sharp@^2.0.20:
     sharp "^0.21.3"
     svgo "^0.7.2"
 
+gatsby-plugin-yandex-metrika@^1.3.0:
+  version "1.3.0"
+  resolved "https://registry.yarnpkg.com/gatsby-plugin-yandex-metrika/-/gatsby-plugin-yandex-metrika-1.3.0.tgz#0ee41a9cca4bef05c26621081e9c20954a00b0df"
+  integrity sha512-xLaAksVr84ECSOkmH7d/7IuXzN5avlz2u+ZtIreCfwBuGpK40hAl6itOPcWvUaahNDiOUCfMEbmLT43qJHtPwg==
+
 gatsby-react-router-scroll@^2.0.4:
   version "2.0.4"
   resolved "https://registry.yarnpkg.com/gatsby-react-router-scroll/-/gatsby-react-router-scroll-2.0.4.tgz#d13d8b2a6c076338f17e331c52075d78b059e9bc"
