@@ -39,6 +39,7 @@ exports.createPages = ({ actions, graphql }) => {
 
   const blogPageTemplate = path.resolve('src/templates/blogPage.js');
   const blogPostTemplate = path.resolve('src/templates/blogPost.js');
+  const categoryPageTemplate = path.resolve('src/templates/CategoryPage/CategoryPage.js');
 
   return new Promise((resolve, reject) => {
       resolve(
@@ -104,20 +105,39 @@ exports.createPages = ({ actions, graphql }) => {
                 );
 
                 // Create category pages
-                const totalPages = Math.ceil(postsByCategory.length / postsPerPage);
-                Array.from({ length: totalPages }).forEach((_, index) => {
+
+                if (postsByCategory.length > 0) {
+                  const totalPages = Math.ceil(postsByCategory.length / postsPerPage);
+                  Array.from({ length: totalPages }).forEach((_, index) => {
+                    createPage({
+                      path: index === 0 ? `${categoryInfo.url}` : `${categoryInfo.url}/page-${index + 1}`,
+                      component: categoryPageTemplate,
+                      context: {
+                        allPostsLength: postsByCategory.length,
+                        totalPages,
+                        index,
+                        limit: postsPerPage,
+                        skip: index * postsPerPage,
+                        category,
+                      }
+                    });
+                  });
+                } else {
                   createPage({
-                    path: index === 0 ? `${categoryInfo.url}` : `${categoryInfo.url}/page-${index + 1}`,
-                    component: blogPageTemplate,
+                    path: `${categoryInfo.url}`,
+                    component: categoryPageTemplate,
                     context: {
-                      allPostsLength: postsByCategory.length,
-                      totalPages,
-                      index,
-                      limit: postsPerPage,
-                      skip: index * postsPerPage
+                      allPostsLength: 0,
+                      totalPages: 0,
+                      index: 0,
+                      limit: 0,
+                      skip: 0,
+                      category,
                     }
                   });
-                });
+                }
+
+
 
                 postsByCategory.forEach(post => {
                   console.log(util.inspect(post, false, null, true /* enable colors */));
