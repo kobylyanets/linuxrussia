@@ -5,7 +5,7 @@ import PostHeader from '../components/postHeader';
 import Pagination from '../components/Pationation/Pagination';
 import SEO from '../components/SEO/SEO';
 
-const ExcerptPostItem = ({ post }) => {
+export const ExcerptPostItem = ({ post }) => {
   const {
     title,
     date,

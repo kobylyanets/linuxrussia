@@ -1,7 +1,7 @@
 import React from 'react';
 import { Link } from 'gatsby';
 import Img from 'gatsby-image';
-import { getCategoryLabel } from  '../utils/categoryUtils';
+import { getCategoryLabel } from '../utils/categoryUtils';
 
 const PostHeaderItem = ({ iconClasses, text }) => {
   return (
@@ -40,7 +40,10 @@ const PostHeader = ({
         )}
 
         {category && (
-          <PostHeaderItem iconClasses={'fas fa-hashtag'} text={getCategoryLabel(category)} />
+          <PostHeaderItem
+            iconClasses={'fas fa-hashtag'}
+            text={getCategoryLabel(category)}
+          />
         )}
 
         {comments && (

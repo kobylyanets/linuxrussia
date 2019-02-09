@@ -15,6 +15,7 @@ const CategoriesInfo = {
   [Categories.GUIDES]: {
     label: 'Руководства',
     url: '/guides',
+    description: 'Руководства, полезные статьи по Ubuntu/Linux.',
   },
   [Categories.GAMES]: {
     label: 'Игры',
@@ -31,7 +32,7 @@ const CategoriesInfo = {
   [Categories.ARTICLES]: {
     label: 'Статьи',
     url: '/articles',
-  }
+  },
 };
 
 // CommonJS export for use in gatsby-node.js
