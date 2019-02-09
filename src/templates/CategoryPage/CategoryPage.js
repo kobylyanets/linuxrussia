@@ -8,6 +8,7 @@ import { ExcerptPostItem } from '../blogPage';
 import {
   getCategoryLabel,
   getCategoryDescription,
+  getCategoryIcon,
 } from '../../utils/categoryUtils';
 
 class CategoryPage extends React.Component {
@@ -34,7 +35,7 @@ class CategoryPage extends React.Component {
               <li className="is-active">
                 <a>
                   <span className="icon">
-                    <i className="fas fa-book" aria-hidden="true" />
+                    <i className={getCategoryIcon(category)} aria-hidden="true" />
                   </span>
                   <span>{getCategoryLabel(category)}</span>
                 </a>
@@ -58,7 +59,7 @@ class CategoryPage extends React.Component {
             <Pagination {...{ index, totalPages }} />
           </>
         ) : (
-          <div>Записей не найдено!</div>
+          <div className="title is-size-5 is-uppercase is-pt-2">Записей не найдено!</div>
         )}
       </Layout>
     );
