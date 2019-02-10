@@ -24,7 +24,7 @@ const queryAllPosts = (graphql) => graphql(`
         excerpt
         frontmatter {
           title
-          date(formatString: "DD MMMM YYYY", locale: "RU")
+          date
           url
           category
         }
