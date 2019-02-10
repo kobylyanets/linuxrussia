@@ -91,10 +91,10 @@ const SEO = props => {
           logo,
         } = data;
         const title = props.title || siteMetadata.title;
-        const description = props.description || siteMetadata.description;
+        const description = (props.description && (typeof props.description === 'string') && props.description.trim()) || siteMetadata.description;
         const image = getImage(
           siteMetadata,
-          props.imageURL || logo.edges[0].node.original.src
+          props.imageURL || logo.edges[0].node.fluid.originalImg
         );
         const url = props.url
           ? `${siteMetadata.url}${props.url}`
@@ -159,8 +159,8 @@ const detailsQuery = graphql`
     ) {
       edges {
         node {
-          original {
-            src
+          fluid {
+            originalImg
           }
         }
       }

@@ -24,7 +24,7 @@ function BlogPost(props) {
       <SEO
         title={title}
         imageURL={featuredImage.publicURL}
-        description={excerpt}
+        description={post.excerpt}
         url={url}
         isBlogPost
       />
