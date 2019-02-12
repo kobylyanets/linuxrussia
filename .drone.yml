@@ -1,10 +1,35 @@
 ---
 pipeline:
+
+  restore-cache:
+    image: drillster/drone-volume-cache
+    restore: true
+    mount:
+      - ./node_modules
+    # Mount the cache volume, needs "Trusted"
+    volumes:
+      - /tmp/cache:/cache
+
+  node:
+    image: node:lts
+    commands:
+      - yarn install
+
+  rebuild-cache:
+    image: drillster/drone-volume-cache
+    rebuild: true
+    mount:
+      - ./node_modules
+    # Mount the cache volume, needs "Trusted"
+    volumes:
+      - /tmp/cache:/cache
+
   build:
     image: docker
     commands:
       - docker build --tag builder --file ./docker/Dockerfile .
     volumes:
       - /var/run/docker.sock:/var/run/docker.sock
+
 
 branches: [master]

@@ -6,4 +6,3 @@ ENV BUILD_PATH /opt/linuxrussia
 RUN mkdir ${BUILD_PATH} && cd ${BUILD_PATH}
 COPY . ${BUILD_PATH}
 WORKDIR ${BUILD_PATH}
-RUN yarn install --production
