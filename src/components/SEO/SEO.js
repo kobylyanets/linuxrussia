@@ -91,7 +91,11 @@ const SEO = props => {
           logo,
         } = data;
         const title = props.title || siteMetadata.title;
-        const description = (props.description && (typeof props.description === 'string') && props.description.trim()) || siteMetadata.description;
+        const description =
+          (props.description &&
+            typeof props.description === 'string' &&
+            props.description.trim()) ||
+          siteMetadata.description;
         const image = getImage(
           siteMetadata,
           props.imageURL || logo.edges[0].node.fluid.originalImg

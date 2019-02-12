@@ -24,7 +24,7 @@ const CategoriesInfo = {
     label: 'Игры',
     url: '/games',
     icon: 'fas fa-gamepad',
-    description: 'Игры для Linux / Ubuntu.'
+    description: 'Игры для Linux / Ubuntu.',
   },
   [Categories.THEMES]: {
     label: 'Темы',
@@ -42,7 +42,8 @@ const CategoriesInfo = {
     label: 'Статьи',
     url: '/articles',
     icon: 'fas fa-paperclip',
-    description: 'Не руководства, но тоже интересный материал на тему Ubuntu / Linux.',
+    description:
+      'Не руководства, но тоже интересный материал на тему Ubuntu / Linux.',
   },
 };
 
