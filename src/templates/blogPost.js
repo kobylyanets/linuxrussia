@@ -15,7 +15,6 @@ function BlogPost(props) {
     author,
     category,
     featuredImage,
-    excerpt,
     url,
   } = post.frontmatter;
 

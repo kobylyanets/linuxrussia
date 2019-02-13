@@ -23,17 +23,17 @@ const TerminalArticlesSidebarBlock = () => {
           4. Терминал Linux. Команды поиска файлов и директорий.
         </Link>
 
-        <Link className="list-item" to="/terminal-view-text-files.html">
-          5. Терминал Linux. Команды просмотра текстовых файлов.
-        </Link>
+        {/*<Link className="list-item" to="/terminal-view-text-files.html">*/}
+          {/*5. Терминал Linux. Команды просмотра текстовых файлов.*/}
+        {/*</Link>*/}
 
-        <Link className="list-item" to="/terminal-chmod-chown.html">
-          6. Терминал Linux. Права доступа к каталогам и файлам в Linux, команды chmod и chown.
-        </Link>
+        {/*<Link className="list-item" to="/terminal-chmod-chown.html">*/}
+          {/*6. Терминал Linux. Права доступа к каталогам и файлам в Linux, команды chmod и chown.*/}
+        {/*</Link>*/}
 
-        <Link className="list-item" to="/terminal-alias.html">
-          7. Терминал Linux. Создание alias (псевдонима) в Ubuntu.
-        </Link>
+        {/*<Link className="list-item" to="/terminal-alias.html">*/}
+          {/*7. Терминал Linux. Создание alias (псевдонима) в Ubuntu.*/}
+        {/*</Link>*/}
 
       </div>
     </SideBarBlock>
