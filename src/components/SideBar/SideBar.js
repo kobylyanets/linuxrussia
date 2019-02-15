@@ -2,6 +2,7 @@ import React from 'react';
 import SearchBar from './SearchBar';
 import SubscribeBlock from '../SubscribeBlock/SubscribeBlock';
 import TerminalArticlesSidebarBlock from '../ArticlesSidebarBlock/TerminalArticlesSidebarBlock';
+import KdeArticlesSidebarBlock from '../ArticlesSidebarBlock/KdeSidebarBlock';
 
 const SideBar = () => {
   return (
@@ -9,6 +10,7 @@ const SideBar = () => {
       <SearchBar />
       <SubscribeBlock />
       <TerminalArticlesSidebarBlock />
+      <KdeArticlesSidebarBlock />
     </div>
   );
 };
