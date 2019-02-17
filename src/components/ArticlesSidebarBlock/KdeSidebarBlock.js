@@ -3,7 +3,6 @@ import { Link } from 'gatsby';
 
 import SideBarBlock from '../SideBar/SideBarBlock';
 
-
 const KdeArticlesSidebarBlock = () => {
   return (
     <SideBarBlock title="ЦИКЛ СТАТЕЙ О KDE.">
@@ -33,9 +32,8 @@ const KdeArticlesSidebarBlock = () => {
         </Link>
 
         <Link className="list-item" to="/kde-design-styles.html">
-         6. Стили оформления.
+          6. Стили оформления.
         </Link>
-
       </div>
     </SideBarBlock>
   );
