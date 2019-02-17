@@ -56,6 +56,7 @@ module.exports = {
               sizeByPixelDensity: true,
             },
           },
+          'gatsby-remark-static-images',
         ]
       }
     },
