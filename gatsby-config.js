@@ -73,12 +73,18 @@ module.exports = {
       options: {
         exclude: [
           '/page*',
-          '/programs', '/programs/page*',
-          '/guides', '/guides/page*',
-          '/games', '/games/page*',
-          '/themes', '/themes/page*',
-          '/articles', '/articles/page*',
-          '/news', '/news/page*'
+          '/programs',
+          '/programs/page*',
+          '/guides',
+          '/guides/page*',
+          '/games',
+          '/games/page*',
+          '/themes',
+          '/themes/page*',
+          '/articles',
+          '/articles/page*',
+          '/news',
+          '/news/page*',
         ],
         xmlNs: 'xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"',
         query: `
@@ -114,6 +120,12 @@ module.exports = {
           }),
       },
     },
+    {
+      resolve: 'gatsby-plugin-robots-txt',
+      options: {
+        configFile: 'src/configs/robots-txt.config.js'
+      }
+    }
     // this (optional) plugin enables Progressive Web App + Offline functionality
     // To learn more, visit: https://gatsby.app/offline
     // 'gatsby-plugin-offline',
