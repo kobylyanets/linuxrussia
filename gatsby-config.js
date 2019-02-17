@@ -1,5 +1,6 @@
 module.exports = {
   siteMetadata: {
+    siteUrl: 'https://linuxrussia.com',
     url: 'https://linuxrussia.com/',
     site_name: 'LinuxRussia.com',
     title: 'Статьи о Linux / Ubuntu',
@@ -43,7 +44,7 @@ module.exports = {
     {
       resolve: `gatsby-transformer-remark`,
       options: {
-        "excerpt_separator": `<!-- more -->`,
+        'excerpt_separator': `<!-- more -->`,
         plugins: [
           'gatsby-remark-prismjs',
           {
@@ -67,6 +68,52 @@ module.exports = {
       },
     },
     `gatsby-plugin-sass`,
+    {
+      resolve: `gatsby-plugin-sitemap`,
+      options: {
+        exclude: [
+          '/page*',
+          '/programs', '/programs/page*',
+          '/guides', '/guides/page*',
+          '/games', '/games/page*',
+          '/themes', '/themes/page*',
+          '/articles', '/articles/page*',
+          '/news', '/news/page*'
+        ],
+        xmlNs: 'xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"',
+        query: `
+          {
+            site {
+              siteMetadata {
+                siteUrl
+              }
+            }
+        
+            allSitePage {
+              edges {
+                node {
+                  path
+                  context {
+                    lastmod(formatString: "YYYY-MM-DD")
+                  }
+                }
+              }
+            }
+        }`,
+        serialize: ({ site, allSitePage }) =>
+          allSitePage.edges.map(edge => {
+            const isMainPage = edge.node.path === '/';
+            const changefreq = isMainPage ? 'daily' : 'monthly';
+            const priority = isMainPage ? 0.9 : 0.8;
+            return {
+              url: site.siteMetadata.siteUrl + edge.node.path,
+              changefreq,
+              priority,
+              lastmod: edge.node.context.lastmod
+            };
+          }),
+      },
+    },
     // this (optional) plugin enables Progressive Web App + Offline functionality
     // To learn more, visit: https://gatsby.app/offline
     // 'gatsby-plugin-offline',

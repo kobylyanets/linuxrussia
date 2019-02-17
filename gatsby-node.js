@@ -77,6 +77,7 @@ exports.createPages = ({ actions, graphql }) => {
                   component: blogPostTemplate,
                   context: {
                     id: node.id,
+                    lastmod: node.frontmatter.date
                   },
                 });
               });
