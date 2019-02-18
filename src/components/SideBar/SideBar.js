@@ -1,9 +1,11 @@
 import React from 'react';
 import SearchBar from './SearchBar';
 import SubscribeBlock from '../SubscribeBlock/SubscribeBlock';
-import TerminalArticlesSidebarBlock from '../ArticlesSidebarBlock/TerminalArticlesSidebarBlock';
-import KdeArticlesSidebarBlock from '../ArticlesSidebarBlock/KdeSidebarBlock';
 import StatisticSidebarBlock from '../ArticlesSidebarBlock/StatisticSidebarBlock';
+import PostsBlock from './PostsBlock';
+
+import kdePostsConfig from './config/kde.posts.config';
+import terminalPostsConfig from './config/terminal.posts.config';
 
 const SideBar = () => {
   return (
@@ -11,8 +13,8 @@ const SideBar = () => {
       <SearchBar />
       <StatisticSidebarBlock />
       <SubscribeBlock />
-      <TerminalArticlesSidebarBlock />
-      <KdeArticlesSidebarBlock />
+      <PostsBlock config={terminalPostsConfig} />
+      <PostsBlock config={kdePostsConfig} />
     </div>
   );
 };
