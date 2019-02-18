@@ -1,7 +1,7 @@
 import React from 'react';
 import SearchBar from './SearchBar';
 import SubscribeBlock from '../SubscribeBlock/SubscribeBlock';
-import StatisticSidebarBlock from '../ArticlesSidebarBlock/StatisticSidebarBlock';
+import StatisticBlock from './StatisticBlock';
 import PostsBlock from './PostsBlock';
 
 import kdePostsConfig from './config/kde.posts.config';
@@ -11,7 +11,7 @@ const SideBar = () => {
   return (
     <div className="column">
       <SearchBar />
-      <StatisticSidebarBlock />
+      <StatisticBlock />
       <SubscribeBlock />
       <PostsBlock config={terminalPostsConfig} />
       <PostsBlock config={kdePostsConfig} />
