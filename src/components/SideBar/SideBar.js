@@ -6,6 +6,8 @@ import PostsBlock from './PostsBlock';
 
 import kdePostsConfig from './config/kde.posts.config';
 import terminalPostsConfig from './config/terminal.posts.config';
+import dataRecoveryPostsConfig from './config/data_recovery.posts.config';
+import systemFilesPostsConfig from './config/file_system.posts.config';
 
 const SideBar = () => {
   return (
@@ -14,7 +16,9 @@ const SideBar = () => {
       <StatisticBlock />
       <SubscribeBlock />
       <PostsBlock config={terminalPostsConfig} />
+      <PostsBlock config={dataRecoveryPostsConfig} />
       <PostsBlock config={kdePostsConfig} />
+      <PostsBlock config={systemFilesPostsConfig} />
     </div>
   );
 };
