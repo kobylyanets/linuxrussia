@@ -1,9 +1,9 @@
 import React from 'react';
-import SideBarBlock from '../SideBar/SideBarBlock';
+import SideBarBlock from './SideBarBlock';
 import ArticlesCount from '../ArticlesCount';
 import { Link } from 'gatsby';
 
-const StatisticSidebarBlock = () => {
+const StatisticBlock = () => {
   return (
     <SideBarBlock title="Внимание!">
       <div className="block has-text-justified">
@@ -37,4 +37,4 @@ const StatisticSidebarBlock = () => {
   );
 };
 
-export default StatisticSidebarBlock;
+export default StatisticBlock;
