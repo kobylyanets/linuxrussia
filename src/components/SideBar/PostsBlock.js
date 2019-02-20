@@ -8,7 +8,7 @@ const PostsBlock = ({ config: { links, title, hasZeroIndex = false } }) => {
     <SideBarBlock title={title}>
       <div className="panel-list">
         {links.map((link, index) => (
-          <Link className="panel-block" to={link.to}>
+          <Link key={index} className="panel-block" to={link.to}>
             {`${hasZeroIndex ? index : index + 1}. ${link.label}`}
           </Link>
         ))}

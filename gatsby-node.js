@@ -3,6 +3,7 @@
  *
  * @see: https://www.gatsbyjs.org/docs/node-apis/
  */
+const { getPostUrl } =  require('./src/utils/urlUtils');
 const { CategoriesInfo } = require('./src/configs/categoriesConfig');
 const path = require(`path`);
 // const { createFilePath } = require(`gatsby-source-filesystem`);
@@ -73,7 +74,7 @@ exports.createPages = ({ actions, graphql }) => {
               // Create Pages for all posts
               allPosts.forEach(({ node }) => {
                 createPage({
-                  path: `${node.frontmatter.url}.html`,
+                  path: getPostUrl(node.frontmatter.url),
                   component: blogPostTemplate,
                   context: {
                     id: node.id,
