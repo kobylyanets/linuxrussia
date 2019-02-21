@@ -2,7 +2,7 @@ import React from 'react';
 import { graphql } from 'gatsby';
 import Layout from '../layouts/layout';
 import PostHeader from '../components/postHeader';
-import Pagination from '../components/Pationation/Pagination';
+import Pagination from '../components/Pagination';
 import SEO from '../components/SEO/SEO';
 
 export const ExcerptPostItem = ({ post }) => {
@@ -32,7 +32,7 @@ export const ExcerptPostItem = ({ post }) => {
 };
 
 const BlogPage = ({ data, ...props }) => {
-  const { index, totalPages } = props.pageContext;
+  const { page, pages } = props.pageContext;
   const posts = data.allMarkdownRemark.edges.map(edge => edge.node);
 
   return (
@@ -44,7 +44,7 @@ const BlogPage = ({ data, ...props }) => {
         ))}
       </div>
 
-      <Pagination {...{ index, totalPages }} />
+      <Pagination page={page} pages={pages} />
     </Layout>
   );
 };

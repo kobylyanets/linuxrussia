@@ -3,17 +3,18 @@ import { graphql, Link } from 'gatsby';
 
 import Layout from '../../layouts/layout';
 import SEO from '../../components/SEO/SEO';
-import Pagination from '../../components/Pationation/Pagination';
+import Pagination from '../../components/Pagination';
 import { ExcerptPostItem } from '../blogPage';
 import {
   getCategoryLabel,
   getCategoryDescription,
   getCategoryIcon,
+  getCategoryUrl
 } from '../../utils/categoryUtils';
 
 class CategoryPage extends React.Component {
   render() {
-    const { index, totalPages, category } = this.props.pageContext;
+    const { page, pages, category } = this.props.pageContext;
     const posts =
       this.props.data.allMarkdownRemark &&
       this.props.data.allMarkdownRemark.edges.map(edge => edge.node);
@@ -59,7 +60,7 @@ class CategoryPage extends React.Component {
                 <ExcerptPostItem key={index} post={post} />
               ))}
             </div>
-            <Pagination {...{ index, totalPages }} />
+            <Pagination pages={pages} page={page} pathPrefix={getCategoryUrl(category)} />
           </>
         ) : (
           <div className="title is-size-5 is-uppercase is-pt-2">

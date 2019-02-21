@@ -15,4 +15,9 @@ const getCategoryIcon = id => {
   return (category && category.icon) || '';
 };
 
-export { getCategoryLabel, getCategoryDescription, getCategoryIcon };
+const getCategoryUrl = id => {
+  let category = CategoriesInfo[id];
+  return (category && category.url) || '';
+};
+
+export { getCategoryLabel, getCategoryDescription, getCategoryIcon, getCategoryUrl };
