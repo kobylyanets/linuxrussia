@@ -8,6 +8,7 @@ const { CategoriesInfo } = require('./src/configs/categoriesConfig');
 const path = require(`path`);
 // const { createFilePath } = require(`gatsby-source-filesystem`);
 const util = require('util');
+const { HOME_PATH, PAGE_PREFIX } = require('./src/configs/site.config');
 
 const queryAllPosts = (graphql) => graphql(`
 {
@@ -56,15 +57,16 @@ exports.createPages = ({ actions, graphql }) => {
               // Create paginated blog pages
               // TODO: Вынести в конфиг
               const postsPerPage = 6;
-              const totalPages = Math.ceil(allPosts.length / postsPerPage);
-              Array.from({ length: totalPages }).forEach((_, index) => {
+              const pages = Math.ceil(allPosts.length / postsPerPage);
+              Array.from({ length: pages }).forEach((_, index) => {
+                const page = index + 1;
                 createPage({
-                  path: index === 0 ? '/' : `/page-${index + 1}`,
+                  path: index === 0 ? HOME_PATH : `${PAGE_PREFIX}${page}`,
                   component: blogPageTemplate,
                   context: {
                     allPostsLength: allPosts.length,
-                    totalPages,
-                    index,
+                    pages,
+                    page,
                     limit: postsPerPage,
                     skip: index * postsPerPage
                   }
@@ -109,15 +111,17 @@ exports.createPages = ({ actions, graphql }) => {
                 // Create category pages
 
                 if (postsByCategory.length > 0) {
-                  const totalPages = Math.ceil(postsByCategory.length / postsPerPage);
-                  Array.from({ length: totalPages }).forEach((_, index) => {
+                  const pages = Math.ceil(postsByCategory.length / postsPerPage);
+                  Array.from({ length: pages }).forEach((_, index) => {
+                    const page = index + 1;
+                    const pathPrefix = categoryInfo.url;
                     createPage({
-                      path: index === 0 ? `${categoryInfo.url}` : `${categoryInfo.url}/page-${index + 1}`,
+                      path: index === 0 ? `${pathPrefix}` : `${pathPrefix}${PAGE_PREFIX}${page}`,
                       component: categoryPageTemplate,
                       context: {
                         allPostsLength: postsByCategory.length,
-                        totalPages,
-                        index,
+                        pages,
+                        page,
                         limit: postsPerPage,
                         skip: index * postsPerPage,
                         category,
