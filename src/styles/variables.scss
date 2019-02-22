@@ -1,3 +1,31 @@
 // VARIABLES
 //$icon-dimensions-large: 6rem;
 $content-blockquote-border-left: 5px solid hsl(348, 100%, 61%);
+
+// brand colors
+$vk: hsl(213, 35%, 41%);
+$vk-invert: findColorInvert($vk);
+
+$twitter: hsl(203, 89%, 53%);
+$twitter-invert: findColorInvert($twitter);
+
+$telegram: hsl(200, 100%, 40%);
+$telegram-invert: findColorInvert($telegram);
+
+$odnoklassniki: hsl(27, 84%, 55%);
+$odnoklassniki-invert: findColorInvert($odnoklassniki);
+
+$mailru: hsl(205, 82%, 49%);
+$mailru-invert: findColorInvert($mailru);
+
+$facebook: hsl(221, 44%, 41%);
+$facebook-invert: findColorInvert($facebook);
+
+$custom-colors: (
+        "vk": ($vk, $vk-invert),
+        "twitter": ($twitter, $twitter-invert),
+        "telegram": ($telegram, $telegram-invert),
+        "odnoklassniki": ($odnoklassniki, $odnoklassniki-invert),
+        "mailru": ($mailru, $mailru-invert),
+        "facebook": ($facebook, $facebook-invert),
+);
