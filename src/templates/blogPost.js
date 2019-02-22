@@ -6,6 +6,8 @@ import PostHeader from '../components/postHeader';
 import Img from 'gatsby-image';
 import SEO from '../components/SEO/SEO';
 import ShareBlock from '../components/ShareBlock/ShareBlock';
+import { getAbsolutePostUrl } from '../utils/urlUtils';
+import ExternalLink from '../components/core/ExternalLink';
 
 function BlogPost(props) {
   const post = props.data.post;
@@ -44,8 +46,17 @@ function BlogPost(props) {
         />
 
         <hr style={{ height: '2px' }} />
+        <h4 className="title is-size-5 is-mb-3 is-uppercase">Если у вас возникли вопросы.</h4>
+        <div>
+          Приглашаю задавать их на сервисе вопросов и ответов:{' '}
+          <ExternalLink to="https://ask.linuxrussia.com/">Ask.LinuxRussia.com</ExternalLink>.
+        </div>
+        <div>Там ваши вопросы не потеряются и вы быстрее получите ответ, в отличие от комментариев.</div>
 
-        <ShareBlock />
+
+        <hr style={{ height: '2px' }} />
+
+        <ShareBlock sharedUrl={getAbsolutePostUrl(url)} title={title}/>
 
         <hr style={{ height: '4px' }} />
 

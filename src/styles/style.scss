@@ -2,7 +2,7 @@
 @import './variables';
 
 // Importing font awesome
-$fa-font-path:"../../node_modules/@fortawesome/fontawesome-free/webfonts";
+$fa-font-path: "../../node_modules/@fortawesome/fontawesome-free/webfonts";
 @import '../../node_modules/@fortawesome/fontawesome-free/scss/fontawesome';
 @import '../../node_modules/@fortawesome/fontawesome-free/scss/regular';
 @import '../../node_modules/@fortawesome/fontawesome-free/scss/solid';
@@ -41,15 +41,5 @@ $fa-font-path:"../../node_modules/@fortawesome/fontawesome-free/webfonts";
 }
 
 span > .fa-telegram {
-  color: #0088cc!important;
-}
-
-.ya-share2__container_size_m .ya-share2__icon {
-  height: 36px!important;
-  width: 36px!important;
-  background-size: 36px 36px!important;
-}
-
-.ya-share2__container_size_m .ya-share2__item {
-  margin: 0 8px 0 0!important;
+  color: #0088cc !important;
 }
