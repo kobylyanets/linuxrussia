@@ -9,7 +9,7 @@ import {
   getCategoryLabel,
   getCategoryDescription,
   getCategoryIcon,
-  getCategoryUrl
+  getCategoryUrl,
 } from '../../utils/categoryUtils';
 
 class CategoryPage extends React.Component {
@@ -60,7 +60,11 @@ class CategoryPage extends React.Component {
                 <ExcerptPostItem key={index} post={post} />
               ))}
             </div>
-            <Pagination pages={pages} page={page} pathPrefix={getCategoryUrl(category)} />
+            <Pagination
+              pages={pages}
+              page={page}
+              pathPrefix={getCategoryUrl(category)}
+            />
           </>
         ) : (
           <div className="title is-size-5 is-uppercase is-pt-2">
