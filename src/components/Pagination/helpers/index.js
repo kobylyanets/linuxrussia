@@ -8,7 +8,9 @@ const createPaginationObjects = (length, page, pathPrefix, increment = 2) =>
   }));
 
 const getPageUrl = (pageNum, pathPrefix) => {
-  return `${pathPrefix === HOME_PATH ? '' : pathPrefix}${PAGE_PREFIX}${pageNum}`;
+  return `${
+    pathPrefix === HOME_PATH ? '' : pathPrefix
+  }${PAGE_PREFIX}${pageNum}`;
 };
 
 const getPrevPageUrl = (page, pathPrefix) => {
@@ -101,9 +103,4 @@ const getNavItems = (page, pages, pathPrefix) => {
   return navItems;
 };
 
-export {
-  getNavItems,
-  getPrevPageUrl,
-  getNextPageUrl,
-}
-
+export { getNavItems, getPrevPageUrl, getNextPageUrl };

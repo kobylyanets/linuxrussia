@@ -46,17 +46,24 @@ function BlogPost(props) {
         />
 
         <hr style={{ height: '2px' }} />
-        <h4 className="title is-size-5 is-mb-3 is-uppercase">Если у вас возникли вопросы.</h4>
+        <h4 className="title is-size-5 is-mb-3 is-uppercase">
+          Если у вас возникли вопросы.
+        </h4>
         <div>
           Приглашаю задавать их на сервисе вопросов и ответов:{' '}
-          <ExternalLink to="https://ask.linuxrussia.com/">Ask.LinuxRussia.com</ExternalLink>.
+          <ExternalLink to="https://ask.linuxrussia.com/">
+            Ask.LinuxRussia.com
+          </ExternalLink>
+          .
         </div>
-        <div>Там ваши вопросы не потеряются и вы быстрее получите ответ, в отличие от комментариев.</div>
-
+        <div>
+          Там ваши вопросы не потеряются и вы быстрее получите ответ, в отличие
+          от комментариев.
+        </div>
 
         <hr style={{ height: '2px' }} />
 
-        <ShareBlock sharedUrl={getAbsolutePostUrl(url)} title={title}/>
+        <ShareBlock sharedUrl={getAbsolutePostUrl(url)} title={title} />
 
         <hr style={{ height: '4px' }} />
 

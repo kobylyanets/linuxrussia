@@ -23,15 +23,13 @@ const Pagination = ({ page, pages, pathPrefix = HOME_PATH }) => {
         {navItems.map(item => (
           <li key={item.index}>
             {item.separator ? (
-              <span className="pagination-ellipsis">
-								&hellip;
-							</span>
+              <span className="pagination-ellipsis">&hellip;</span>
             ) : (
               <Link
                 to={item.link}
                 className={`pagination-link ${
                   item.current ? 'is-current' : ''
-                  }`}
+                }`}
                 aria-label={`Перейти к странице ${item.index}`}
               >
                 {item.index}

@@ -7,5 +7,5 @@ module.exports = {
     Настройка Linux / Ubuntu после установки. 
     Обзоры, описание установки и настройка приложений для Linux / Ubuntu.
   `,
-  PAGE_PREFIX: '/page/'
+  PAGE_PREFIX: '/page/',
 };

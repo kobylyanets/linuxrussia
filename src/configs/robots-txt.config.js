@@ -19,7 +19,7 @@ module.exports = {
         '/articles/page*',
         '/news',
         '/news/page*',
-        '/*?*'
+        '/*?*',
       ],
     },
   ],

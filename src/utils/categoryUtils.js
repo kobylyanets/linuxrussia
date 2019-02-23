@@ -20,4 +20,9 @@ const getCategoryUrl = id => {
   return (category && category.url) || '';
 };
 
-export { getCategoryLabel, getCategoryDescription, getCategoryIcon, getCategoryUrl };
+export {
+  getCategoryLabel,
+  getCategoryDescription,
+  getCategoryIcon,
+  getCategoryUrl,
+};
