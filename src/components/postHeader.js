@@ -50,6 +50,14 @@ const PostHeader = ({
           <PostHeaderItem iconClasses={'far fa-comments'} text={comments} />
         )}
 
+        <span className="inline">
+          <i className={`far fa-comments icon`} />
+          <span
+            className="cackle-comment-count"
+            data-cackle-url={`${url}.html`}
+          />
+        </span>
+
         {readTime && (
           <PostHeaderItem
             iconClasses={'far fa-clock'}

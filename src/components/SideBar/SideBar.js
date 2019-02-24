@@ -8,16 +8,18 @@ import kdePostsConfig from './config/kde.posts.config';
 import terminalPostsConfig from './config/terminal.posts.config';
 import dataRecoveryPostsConfig from './config/data_recovery.posts.config';
 import systemFilesPostsConfig from './config/file_system.posts.config';
-import systemdPostsConfig from './config/systemd.posts.config'
+import systemdPostsConfig from './config/systemd.posts.config';
+import LastComments from './LastComments';
 
 const SideBar = () => {
   return (
-    <div className="column">
+    <div className="column is-4">
       <SearchBar />
       <StatisticBlock />
       <SubscribeBlock />
+      <LastComments />
       <PostsBlock config={terminalPostsConfig} />
-      <PostsBlock config={systemdPostsConfig}/>
+      <PostsBlock config={systemdPostsConfig} />
       <PostsBlock config={dataRecoveryPostsConfig} />
       <PostsBlock config={kdePostsConfig} />
       <PostsBlock config={systemFilesPostsConfig} />
