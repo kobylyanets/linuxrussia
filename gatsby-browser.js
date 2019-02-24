@@ -20,14 +20,9 @@ const injectCackleCommentsScript = () => {
 };
 
 exports.onRouteUpdate = function({ location }) {
-  if (!injectedCackleCommentsScript) {
-    injectCackleCommentsScript();
-    injectedCackleCommentsScript = true;
-  }
-
   // Инициализация компонента комментариев нужно делать отдельно, иначе приложение упадет.
+  window.cackle_widget = [];
   if (document.querySelector(`#mc-container`) !== null) {
-    window.cackle_widget = [];
     window.cackle_widget.push({
       widget: 'Comment',
       id: 49478,
@@ -37,8 +32,18 @@ exports.onRouteUpdate = function({ location }) {
     initWidget();
   }
 
+  if (!injectedCackleCommentsScript) {
+    injectCackleCommentsScript();
+    injectedCackleCommentsScript = true;
+  } else {
+    // При первой инициализации скрипта комментариев, никакого бутстрап нет,
+    // следовательно сам скрипт инициализирует комментарии, ничего не падает.
+    // Если очистить первый раз этот массив, то комментариев не будет на странице.
+    window.cackle_widget = [];
+  }
+
   // Инициализация дополнительных виджетов.
-  window.cackle_widget = [];
+
   window.cackle_widget.push({ widget: 'CommentCount', id: 49478 });
   if (document.querySelector(`#mc-last`) !== null) {
     window.cackle_widget.push({ widget: 'CommentRecent', id: 49478 });
