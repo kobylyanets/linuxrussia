@@ -13,7 +13,8 @@ export default {
       to: '/systemd-create-own-unit.html',
     },
     {
-      label: 'Автоматическое резервное копирование на Яндекс.Диск средствами systemd.',
+      label:
+        'Автоматическое резервное копирование на Яндекс.Диск средствами systemd.',
       to: '/systemd-backup-yandex-disk.html',
     },
     {

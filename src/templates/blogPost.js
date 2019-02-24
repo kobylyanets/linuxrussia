@@ -37,6 +37,7 @@ function BlogPost(props) {
           date={date}
           readTime={post.timeToRead}
           author={author}
+          url={url}
           category={category}
         />
 
