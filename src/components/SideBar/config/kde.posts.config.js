@@ -28,6 +28,22 @@ export default {
       label: 'Стили оформления.',
       to: '/kde-design-styles.html',
     },
+    {
+      label: 'Контекстное меню Dolphin, полезные скрипты и создание собственных действий.',
+      to: '/kde-dolphin-service-menu.html',
+    },
+    {
+      label: 'Marble — виртуальный глобус.',
+      to: '/marble.html',
+    },
+    {
+      label: 'KDE Connect — программа для связи компьютера и Android-смартфона.',
+      to: '/kde-connect.html',
+    },
+    {
+      label: 'Skrooge — программа управления финансами.',
+      to: '/skrooge.html',
+    },
   ],
   title: 'Цикл статей о KDE',
   hasZeroIndex: true,
