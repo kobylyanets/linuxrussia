@@ -16,6 +16,14 @@ export default {
       label: 'Samba. Графические и Web-интерфейсы.',
       to: '/samba-gui-tools.html',
     },
+    {
+      label: 'Подключаем сервер с Samba к домену Windows',
+      to: '/samba-join-windows-ad.html',
+    },
+    {
+      label: 'Samba в роли контроллера домена Active Directory',
+      to: '/samba-as-domain-controller.html',
+    },
   ],
   title: 'Цикл статей о Samba',
 };
