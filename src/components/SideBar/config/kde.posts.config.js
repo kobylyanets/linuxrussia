@@ -29,7 +29,8 @@ export default {
       to: '/kde-design-styles.html',
     },
     {
-      label: 'Контекстное меню Dolphin, полезные скрипты и создание собственных действий.',
+      label:
+        'Контекстное меню Dolphin, полезные скрипты и создание собственных действий.',
       to: '/kde-dolphin-service-menu.html',
     },
     {
@@ -37,7 +38,8 @@ export default {
       to: '/marble.html',
     },
     {
-      label: 'KDE Connect — программа для связи компьютера и Android-смартфона.',
+      label:
+        'KDE Connect — программа для связи компьютера и Android-смартфона.',
       to: '/kde-connect.html',
     },
     {
