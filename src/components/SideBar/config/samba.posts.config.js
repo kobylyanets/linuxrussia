@@ -2,7 +2,7 @@ export default {
   links: [
     {
       label: 'Настройка файлового обмена между Windows и Ubuntu.',
-      to: 'share-files-between-ubuntu-and-windows.html',
+      to: '/share-files-between-ubuntu-and-windows.html',
     },
     {
       label: 'Samba. Установка и простая настройка.',

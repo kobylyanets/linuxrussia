@@ -10,6 +10,7 @@ import dataRecoveryPostsConfig from './config/data_recovery.posts.config';
 import systemFilesPostsConfig from './config/file_system.posts.config';
 import systemdPostsConfig from './config/systemd.posts.config';
 import sambaPostsConfig from './config/samba.posts.config';
+import lampPostsConfig from './config/lamp.posts.config';
 import LastComments from './LastComments';
 import AttentionBetaBlock from './AttentionBetaBlock';
 
@@ -27,6 +28,7 @@ const SideBar = () => {
       <PostsBlock config={dataRecoveryPostsConfig} />
       <PostsBlock config={kdePostsConfig} />
       <PostsBlock config={systemFilesPostsConfig} />
+      <PostsBlock config={lampPostsConfig} />
     </div>
   );
 };
