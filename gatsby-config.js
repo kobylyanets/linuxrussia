@@ -47,6 +47,13 @@ module.exports = {
       options: {
         'excerpt_separator': `<!-- more -->`,
         plugins: [
+          {
+            resolve: `gatsby-remark-autolink-headers`,
+            options: {
+              maintainCase: false,
+              removeAccents: false,
+            },
+          },
           'gatsby-remark-prismjs',
           {
             resolve: `gatsby-remark-images`,
