@@ -27,6 +27,10 @@ $fa-font-path: "../../node_modules/@fortawesome/fontawesome-free/webfonts";
   }
 }
 
+.post-info a:hover {
+  text-decoration: underline;
+}
+
 .title > a {
   color: $grey-darker
 }

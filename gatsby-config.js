@@ -134,7 +134,78 @@ module.exports = {
       options: {
         configFile: 'src/configs/robots-txt.config.js'
       }
-    }
+    },
+    {
+      resolve: `gatsby-plugin-feed`,
+      options: {
+        query: `
+        {
+          site {
+            siteMetadata {
+              title
+              description
+              siteUrl
+              site_url: siteUrl
+            }
+          }
+        }
+      `,
+        feeds: [
+          {
+            serialize: ({ query: { site, allMarkdownRemark } }) => {
+              return allMarkdownRemark.edges.map(edge => {
+                return Object.assign({}, edge.node.frontmatter, {
+                  description: `
+                  <img 
+                    src="${site.siteMetadata.siteUrl + edge.node.frontmatter.featuredImage.childImageSharp.fluid.src}" 
+                    width="400px"
+                    height="171px"
+                    alt=""
+                  />
+                  ` + edge.node.excerpt,
+                  author: edge.node.frontmatter.author,
+                  date: edge.node.frontmatter.date,
+                  url: site.siteMetadata.siteUrl + edge.node.frontmatter.url + '.html',
+                  guid: site.siteMetadata.siteUrl + edge.node.frontmatter.url + '.html',
+                  image_url: site.siteMetadata.siteUrl + '/icons/icon-48x48.png',
+                });
+              });
+            },
+            query: `
+            {
+              allMarkdownRemark(
+                limit: 1000,
+                sort: { order: DESC, fields: [frontmatter___date] },
+                filter: {frontmatter: { status: { ne: "template" } }}
+              ) {
+                edges {
+                  node {
+                    excerpt
+                    html
+                    frontmatter {
+                      title
+                      date
+                      url
+                      author
+                      featuredImage {
+                        childImageSharp {
+                          fluid {
+                            src
+                          }
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          `,
+            output: "/rss.xml",
+            title: "Gatsby RSS Feed",
+          },
+        ],
+      },
+    },
     // this (optional) plugin enables Progressive Web App + Offline functionality
     // To learn more, visit: https://gatsby.app/offline
     // 'gatsby-plugin-offline',
