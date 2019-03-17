@@ -69,6 +69,22 @@ const SubscribeBlock = () => {
           <span>Подписаться на новости</span>
         </ExternalLink>
       </div>
+
+      <div className="block">
+        <p className="is-mb-2 has-text-weight-semibold">
+          Подписывайтесь на RSS ленту:
+        </p>
+
+        <ExternalLink className="button is-rss" to="/rss.xml">
+          <span className="icon">
+            <i className="fa fa-rss" />
+          </span>
+          <span>
+            Последние статьи
+          </span>
+        </ExternalLink>
+      </div>
+
     </SideBarBlock>
   );
 };

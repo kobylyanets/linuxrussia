@@ -21,6 +21,9 @@ $mailru-invert: findColorInvert($mailru);
 $facebook: hsl(221, 44%, 41%);
 $facebook-invert: findColorInvert($facebook);
 
+$rss: hsl(19, 89, 54);
+$rss-invert: findColorInvert($rss);
+
 $custom-colors: (
         "vk": ($vk, $vk-invert),
         "twitter": ($twitter, $twitter-invert),
@@ -28,4 +31,5 @@ $custom-colors: (
         "odnoklassniki": ($odnoklassniki, $odnoklassniki-invert),
         "mailru": ($mailru, $mailru-invert),
         "facebook": ($facebook, $facebook-invert),
+        "rss": ($rss, $rss-invert),
 );
