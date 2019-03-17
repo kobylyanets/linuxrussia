@@ -51,11 +51,13 @@ const PostHeader = ({
         )}
 
         <span className="inline">
-          <i className={`far fa-comments icon`} />
-          <span
-            className="cackle-comment-count"
-            data-cackle-url={`${url}.html`}
-          />
+          <Link className="has-text-grey" to={`${url}.html#mc-container`}>
+            <i className={`far fa-comments icon`} />
+            <span
+              className="cackle-comment-count"
+              data-cackle-url={`${url}.html`}
+            />
+          </Link>
         </span>
 
         {readTime && (

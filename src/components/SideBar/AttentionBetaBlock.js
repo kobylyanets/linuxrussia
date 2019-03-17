@@ -1,6 +1,5 @@
 import React from 'react';
 import SideBarBlock from './SideBarBlock';
-import ArticlesCount from '../ArticlesCount';
 import { Link } from 'gatsby';
 
 const AttentionBetaBlock = () => {
@@ -15,7 +14,7 @@ const AttentionBetaBlock = () => {
           <span className="tag is-danger">Beta</span>.
         </p>
         <p className="is-mb-2">
-          В данный момент не работает некоторый функционал (поиск, rss).
+          В данный момент не работает поиск на сайте.
         </p>
         <p className="is-mb-2">
           Более подробно по данной ситуации расписано в статье (
