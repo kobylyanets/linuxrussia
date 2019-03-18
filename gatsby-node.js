@@ -56,7 +56,7 @@ exports.createPages = ({ actions, graphql }) => {
 
               // Create paginated blog pages
               // TODO: Вынести в конфиг
-              const postsPerPage = 6;
+              const postsPerPage = 8;
               const pages = Math.ceil(allPosts.length / postsPerPage);
               Array.from({ length: pages }).forEach((_, index) => {
                 const page = index + 1;

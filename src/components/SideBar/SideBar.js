@@ -11,6 +11,7 @@ import systemFilesPostsConfig from './config/file_system.posts.config';
 import systemdPostsConfig from './config/systemd.posts.config';
 import sambaPostsConfig from './config/samba.posts.config';
 import lampPostsConfig from './config/lamp.posts.config';
+import openvpnPostsConfig from './config/openvpn.posts.config';
 import LastComments from './LastComments';
 import AttentionBetaBlock from './AttentionBetaBlock';
 
@@ -25,6 +26,7 @@ const SideBar = () => {
       <PostsBlock config={terminalPostsConfig} />
       <PostsBlock config={systemdPostsConfig} />
       <PostsBlock config={sambaPostsConfig} />
+      <PostsBlock config={openvpnPostsConfig} />
       <PostsBlock config={dataRecoveryPostsConfig} />
       <PostsBlock config={kdePostsConfig} />
       <PostsBlock config={systemFilesPostsConfig} />
