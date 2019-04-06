@@ -9,10 +9,6 @@ export default {
       to: '/guides',
     },
     {
-      title: 'Игры',
-      to: '/games',
-    },
-    {
       title: 'Темы',
       to: '/themes',
     },
@@ -23,6 +19,10 @@ export default {
     {
       title: 'Статьи',
       to: '/articles',
+    },
+    {
+      title: 'Заметки',
+      to: '/notices',
     },
     {
       title: 'О сайте',

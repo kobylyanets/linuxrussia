@@ -3,12 +3,12 @@
  *
  * @see: https://www.gatsbyjs.org/docs/node-apis/
  */
-const { getPostUrl } =  require('./src/utils/urlUtils');
+const { getPostUrl, getNoticeUrl } =  require('./src/utils/urlUtils');
 const { CategoriesInfo } = require('./src/configs/categoriesConfig');
 const path = require(`path`);
 // const { createFilePath } = require(`gatsby-source-filesystem`);
 const util = require('util');
-const { HOME_PATH, PAGE_PREFIX } = require('./src/configs/site.config');
+const { HOME_PATH, PAGE_PREFIX, NOTICES_PREFIX } = require('./src/configs/site.config');
 
 const queryAllPosts = (graphql) => graphql(`
 {
@@ -33,6 +33,29 @@ const queryAllPosts = (graphql) => graphql(`
       }
     }
   }
+  
+  notices: allMarkdownRemark(
+      filter: {
+        fileAbsolutePath: { regex: "/notices/" }
+        frontmatter: { status: { ne: "template" } }
+      }
+      sort: {order: DESC, fields: [frontmatter___date]} 
+      limit: 1000
+  ) {
+    edges {
+      node {
+        id
+        excerpt
+        frontmatter {
+          title
+          date
+          url
+          category
+        }
+      }
+    }
+  }
+  
 }
 `);
 
@@ -42,6 +65,9 @@ exports.createPages = ({ actions, graphql }) => {
   const blogPageTemplate = path.resolve('src/templates/blogPage.js');
   const blogPostTemplate = path.resolve('src/templates/blogPost.js');
   const categoryPageTemplate = path.resolve('src/templates/CategoryPage/CategoryPage.js');
+
+  const noticesPageTemplate = path.resolve('src/templates/NoticesPage.js');
+  const noticeTemplate = path.resolve('src/templates/Notice.js');
 
   return new Promise((resolve, reject) => {
       resolve(
@@ -149,6 +175,40 @@ exports.createPages = ({ actions, graphql }) => {
                 //   console.log(util.inspect(post, false, null, true /* enable colors */));
                 // });
               }
+
+              const allNotices = result.data.notices.edges;
+              const noticesForPage = 10;
+
+              if (allNotices.length > 0) {
+                const pages = Math.ceil(allNotices.length / noticesForPage);
+                Array.from({ length: pages }).forEach((_, index) => {
+                  const page = index + 1;
+                  createPage({
+                    path: index === 0 ? `${NOTICES_PREFIX}` : `${NOTICES_PREFIX}${PAGE_PREFIX}${page}`,
+                    component: noticesPageTemplate,
+                    context: {
+                      allPostsLength: allNotices.length,
+                      pages,
+                      page,
+                      limit: noticesForPage,
+                      skip: index * noticesForPage
+                    }
+                  });
+                });
+              }
+
+              // Create Pages for all notices
+              allNotices.forEach(({ node }) => {
+                createPage({
+                  path: getNoticeUrl(node.frontmatter.url),
+                  component: noticeTemplate,
+                  context: {
+                    id: node.id,
+                    lastmod: node.frontmatter.date
+                  },
+                });
+              });
+
 
             })
       );

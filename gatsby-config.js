@@ -28,6 +28,13 @@ module.exports = {
         name: 'posts',
       },
     },
+    {
+      resolve: `gatsby-source-filesystem`,
+      options: {
+        path: `${__dirname}/content/notices`,
+        name: 'notices',
+      },
+    },
     `gatsby-transformer-sharp`,
     `gatsby-plugin-sharp`,
     {
@@ -94,6 +101,8 @@ module.exports = {
           '/articles/page/*',
           '/news',
           '/news/page/*',
+          '/notices',
+          '/notices/page/*'
         ],
         xmlNs: 'xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"',
         query: `
@@ -176,7 +185,10 @@ module.exports = {
               allMarkdownRemark(
                 limit: 1000,
                 sort: { order: DESC, fields: [frontmatter___date] },
-                filter: {frontmatter: { status: { ne: "template" } }}
+                filter: {
+                  fileAbsolutePath: { regex: "/posts/" }
+                  frontmatter: { status: { ne: "template" } }
+                }
               ) {
                 edges {
                   node {

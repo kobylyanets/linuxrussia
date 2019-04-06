@@ -1,16 +1,13 @@
 import React from 'react';
 import { StaticQuery, graphql } from 'gatsby';
 
-const ArticlesCount = () => {
+const NoticesCount = () => {
   return (
     <StaticQuery
       query={graphql`
         query {
           result: allMarkdownRemark(
-            filter: {
-              fileAbsolutePath: { regex: "/posts/" }
-              frontmatter: { status: { eq: "published" } }
-            }
+            filter: { fileAbsolutePath: { regex: "/notices/" } }
           ) {
             totalCount
           }
@@ -27,4 +24,4 @@ const ArticlesCount = () => {
   );
 };
 
-export default ArticlesCount;
+export default NoticesCount;
