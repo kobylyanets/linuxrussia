@@ -6,17 +6,15 @@ import PostHeader from '../components/postHeader';
 import Img from 'gatsby-image';
 import SEO from '../components/SEO/SEO';
 import ShareBlock from '../components/ShareBlock/ShareBlock';
-import { getAbsolutePostUrl } from '../utils/urlUtils';
+import { getAbsoluteNoticeUrl } from '../utils/urlUtils';
 import ExternalLink from '../components/core/ExternalLink';
 
-function BlogPost(props) {
+function Notice(props) {
   const post = props.data.post;
   const {
     title,
     date,
     author,
-    category,
-    featuredImage,
     url,
   } = post.frontmatter;
 
@@ -24,20 +22,17 @@ function BlogPost(props) {
     <Layout>
       <SEO
         title={title}
-        imageURL={featuredImage && featuredImage.publicURL}
         description={post.excerpt}
         url={url}
         isBlogPost
       />
       <article>
-        {featuredImage && <Img fluid={featuredImage.childImageSharp.fluid} />}
         <PostHeader
           title={title}
           date={date}
-          readTime={post.timeToRead}
           author={author}
           url={url}
-          category={category}
+          type='Notice'
         />
 
         <div
@@ -46,9 +41,11 @@ function BlogPost(props) {
         />
 
         <hr style={{ height: '2px' }} />
+
         <h4 className="title is-size-5 is-mb-3 is-uppercase">
           Если у вас возникли вопросы.
         </h4>
+
         <div>
           Приглашаю задавать их на сервисе вопросов и ответов:{' '}
           <ExternalLink to="https://ask.linuxrussia.com/">
@@ -56,6 +53,7 @@ function BlogPost(props) {
           </ExternalLink>
           .
         </div>
+
         <div>
           Там ваши вопросы не потеряются и вы быстрее получите ответ, в отличие
           от комментариев.
@@ -63,40 +61,30 @@ function BlogPost(props) {
 
         <hr style={{ height: '2px' }} />
 
-        <ShareBlock sharedUrl={getAbsolutePostUrl(url)} title={title} />
+        <ShareBlock sharedUrl={getAbsoluteNoticeUrl(url)} title={title} />
 
         <hr style={{ height: '4px' }} />
 
         <div id="mc-container" />
+
       </article>
     </Layout>
   );
 }
 
-export default BlogPost;
+export default Notice;
 
 export const query = graphql`
-  query getPostById($id: String!) {
+  query getNoticeById($id: String!) {
     post: markdownRemark(id: { eq: $id }) {
       frontmatter {
         title
         date(formatString: "DD MMM YYYY", locale: "RU")
         url
         author
-        category
-        featuredImage {
-          id
-          publicURL
-          childImageSharp {
-            fluid {
-              ...GatsbyImageSharpFluid
-            }
-          }
-        }
       }
       html
       excerpt
-      timeToRead
     }
   }
 `;

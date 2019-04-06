@@ -2,6 +2,8 @@ import React from 'react';
 import { Link } from 'gatsby';
 import Img from 'gatsby-image';
 import { getCategoryLabel } from '../utils/categoryUtils';
+import PropTypes from 'prop-types';
+import { getNoticeUrl, getPostUrl } from '../utils/urlUtils';
 
 const PostHeaderItem = ({ iconClasses, text }) => {
   return (
@@ -21,9 +23,13 @@ const PostHeader = ({
   comments,
   readTime,
   featuredImage,
+  type
 }) => {
+
+  const postUrl = type === 'Notice' ? getNoticeUrl(url) : getPostUrl(url);
+
   const TitleWrap = url ? Link : React.Fragment;
-  const titleWrapProps = url ? { to: `${url}.html` } : {};
+  const titleWrapProps = url ? { to: postUrl } : {};
   return (
     <>
       {featuredImage && <Img fluid={featuredImage.childImageSharp.fluid} />}
@@ -51,11 +57,11 @@ const PostHeader = ({
         )}
 
         <span className="inline">
-          <Link className="has-text-grey" to={`${url}.html#mc-container`}>
+          <Link className="has-text-grey" to={`${postUrl}#mc-container`}>
             <i className={`far fa-comments icon`} />
             <span
               className="cackle-comment-count"
-              data-cackle-url={`${url}.html`}
+              data-cackle-url={postUrl}
             />
           </Link>
         </span>
@@ -69,6 +75,15 @@ const PostHeader = ({
       </div>
     </>
   );
+};
+
+
+PostHeader.propTypes = {
+  type: PropTypes.oneOf(['Article', 'Notice'])
+};
+
+PostHeader.defaultProps = {
+  type: 'Article'
 };
 
 export default PostHeader;

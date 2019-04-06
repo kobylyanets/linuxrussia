@@ -9,7 +9,7 @@ const StatisticBlock = () => {
       <div className="block has-text-left">
         <p className="is-size-6">Количество опубликованных статей:</p>
         <ArticlesCount />
-        <p className="is-size-6">Количество опубликованных заметок:</p>
+        <p className="is-size-6 is-mt-3">Количество опубликованных заметок:</p>
         <NoticesCount />
       </div>
     </SideBarBlock>

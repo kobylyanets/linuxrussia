@@ -9,8 +9,6 @@ const NoticesPage = ({ data, ...props }) => {
   const { page, pages } = props.pageContext;
   const notices = data.allMarkdownRemark.edges.map(edge => edge.node);
 
-  console.log(notices);
-
   const renderColumns = (cols, rowIndex) => (
     <div key={rowIndex} className="columns is-variable">
       {cols}
