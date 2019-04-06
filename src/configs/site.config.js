@@ -8,4 +8,6 @@ module.exports = {
     Обзоры, описание установки и настройка приложений для Linux / Ubuntu.
   `,
   PAGE_PREFIX: '/page/',
+  NOTICE_PREFIX: '/notice',
+  NOTICES_PREFIX: '/notices',
 };
