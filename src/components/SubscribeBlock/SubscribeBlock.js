@@ -79,12 +79,9 @@ const SubscribeBlock = () => {
           <span className="icon">
             <i className="fa fa-rss" />
           </span>
-          <span>
-            Последние статьи
-          </span>
+          <span>Последние статьи</span>
         </ExternalLink>
       </div>
-
     </SideBarBlock>
   );
 };
