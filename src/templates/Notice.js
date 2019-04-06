@@ -32,6 +32,7 @@ function Notice(props) {
           date={date}
           author={author}
           url={url}
+          category={'Заметки'}
           type='Notice'
         />
 

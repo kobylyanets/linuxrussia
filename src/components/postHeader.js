@@ -48,7 +48,7 @@ const PostHeader = ({
         {category && (
           <PostHeaderItem
             iconClasses={'fas fa-hashtag'}
-            text={getCategoryLabel(category)}
+            text={getCategoryLabel(category) || category}
           />
         )}
 
