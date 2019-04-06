@@ -23,9 +23,8 @@ const PostHeader = ({
   comments,
   readTime,
   featuredImage,
-  type
+  type,
 }) => {
-
   const postUrl = type === 'Notice' ? getNoticeUrl(url) : getPostUrl(url);
 
   const TitleWrap = url ? Link : React.Fragment;
@@ -59,10 +58,7 @@ const PostHeader = ({
         <span className="inline">
           <Link className="has-text-grey" to={`${postUrl}#mc-container`}>
             <i className={`far fa-comments icon`} />
-            <span
-              className="cackle-comment-count"
-              data-cackle-url={postUrl}
-            />
+            <span className="cackle-comment-count" data-cackle-url={postUrl} />
           </Link>
         </span>
 
@@ -77,13 +73,12 @@ const PostHeader = ({
   );
 };
 
-
 PostHeader.propTypes = {
-  type: PropTypes.oneOf(['Article', 'Notice'])
+  type: PropTypes.oneOf(['Article', 'Notice']),
 };
 
 PostHeader.defaultProps = {
-  type: 'Article'
+  type: 'Article',
 };
 
 export default PostHeader;

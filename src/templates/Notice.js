@@ -11,21 +11,11 @@ import ExternalLink from '../components/core/ExternalLink';
 
 function Notice(props) {
   const post = props.data.post;
-  const {
-    title,
-    date,
-    author,
-    url,
-  } = post.frontmatter;
+  const { title, date, author, url } = post.frontmatter;
 
   return (
     <Layout>
-      <SEO
-        title={title}
-        description={post.excerpt}
-        url={url}
-        isBlogPost
-      />
+      <SEO title={title} description={post.excerpt} url={url} isBlogPost />
       <article>
         <PostHeader
           title={title}
@@ -33,7 +23,7 @@ function Notice(props) {
           author={author}
           url={url}
           category={'Заметки'}
-          type='Notice'
+          type="Notice"
         />
 
         <div
@@ -67,7 +57,6 @@ function Notice(props) {
         <hr style={{ height: '4px' }} />
 
         <div id="mc-container" />
-
       </article>
     </Layout>
   );

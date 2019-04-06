@@ -14,6 +14,7 @@ import lampPostsConfig from './config/lamp.posts.config';
 import openvpnPostsConfig from './config/openvpn.posts.config';
 import LastComments from './LastComments';
 import AttentionBetaBlock from './AttentionBetaBlock';
+import LastNoticesBlock from './LastNoticesBlock';
 
 const SideBar = () => {
   return (
@@ -22,6 +23,7 @@ const SideBar = () => {
       <AttentionBetaBlock />
       <StatisticBlock />
       <SubscribeBlock />
+      <LastNoticesBlock />
       <LastComments />
       <PostsBlock config={terminalPostsConfig} />
       <PostsBlock config={systemdPostsConfig} />
