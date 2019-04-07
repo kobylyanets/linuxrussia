@@ -3,11 +3,12 @@ import React from 'react';
 import Layout from '../layouts/layout';
 import { graphql } from 'gatsby';
 import PostHeader from '../components/postHeader';
-import Img from 'gatsby-image';
 import SEO from '../components/SEO/SEO';
 import ShareBlock from '../components/ShareBlock/ShareBlock';
 import { getAbsoluteNoticeUrl } from '../utils/urlUtils';
 import ExternalLink from '../components/core/ExternalLink';
+import logo from '../images/notices-logo.png';
+
 
 function Notice(props) {
   const post = props.data.post;
@@ -15,7 +16,7 @@ function Notice(props) {
 
   return (
     <Layout>
-      <SEO title={title} description={post.excerpt} url={url} isBlogPost />
+      <SEO imageURL={logo} title={title} description={post.excerpt} url={url} isBlogPost />
       <article>
         <PostHeader
           title={title}

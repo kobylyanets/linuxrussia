@@ -5,6 +5,7 @@ import NoticeCard from '../components/NoticeCard/NoticeCard';
 import Pagination from '../components/Pagination';
 import { NOTICES_PREFIX } from '../configs/site.config';
 import SEO from '../components/SEO/SEO';
+import logo from '../images/notices-logo.png';
 
 const NoticesPage = ({ data, ...props }) => {
   const { page, pages } = props.pageContext;
@@ -46,7 +47,7 @@ const NoticesPage = ({ data, ...props }) => {
 
   return (
     <Layout>
-      <SEO title={title} description={description}/>
+      <SEO imageURL={logo} title={title} description={description}/>
       <div className="title">{title}</div>
       <div className="subtitle">{description}</div>
 
