@@ -4,6 +4,7 @@ import { graphql } from 'gatsby';
 import NoticeCard from '../components/NoticeCard/NoticeCard';
 import Pagination from '../components/Pagination';
 import { NOTICES_PREFIX } from '../configs/site.config';
+import SEO from '../components/SEO/SEO';
 
 const NoticesPage = ({ data, ...props }) => {
   const { page, pages } = props.pageContext;
@@ -40,12 +41,14 @@ const NoticesPage = ({ data, ...props }) => {
     return table;
   };
 
+  const title = 'Заметки о Linux / Ubuntu';
+  const description = 'Своеобразный блокнот с короткими заметками о Linux / Ubuntu';
+
   return (
     <Layout>
-      <div className="title">Заметки о Linux / Ubuntu</div>
-      <div className="subtitle">
-        Своеобразный блокнот с короткими заметками о Linux / Ubuntu
-      </div>
+      <SEO title={title} description={description}/>
+      <div className="title">{title}</div>
+      <div className="subtitle">{description}</div>
 
       <div className="block">{renderTwoColumnsTable()}</div>
 
