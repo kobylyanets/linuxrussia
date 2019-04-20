@@ -30,6 +30,10 @@ export default {
       label: 'Терминал Linux. Создание alias (псевдонима) в Ubuntu.',
       to: '/terminal-alias.html',
     },
+    {
+      label: 'Терминал Linux. Горячие сочетания клавиш для Bash.',
+      to: '/keyboard-shortcuts-for-bash.html',
+    },
   ],
   title: 'Цикл статей о терминале Linux ',
 };
