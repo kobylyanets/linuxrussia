@@ -10,6 +10,11 @@ module.exports = {
 
     twitter: 'https://twitter.com/LinuxRussia',
     author: 'Edward Kobylyanets',
+
+    notice_title: 'Заметки о Linux / Ubuntu',
+    notice_description: 'Своеобразный блокнот с короткими заметками о Linux / Ubuntu',
+    notice_site_url: 'https://linuxrussia.com/notices',
+    notice_path_url: 'https://linuxrussia.com/notice'
   },
   plugins: [
     `gatsby-plugin-remove-trailing-slashes`,
@@ -225,18 +230,17 @@ module.exports = {
         {
           site {
             siteMetadata {
-              title
-              description
-              siteUrl
-              site_url: siteUrl
+              site_url: notice_site_url
+              title: notice_title
+              description: notice_description
+              siteUrl: notice_path_url
             }
           }
         }
       `,
         feeds: [
           {
-            serialize: ({ query: { site = {}, allMarkdownRemark = {} } = {} }) => {
-              site.siteMetadata = {};
+            serialize: ({ query: { site, allMarkdownRemark } }) => {
               return allMarkdownRemark.edges.map(edge => {
                 return Object.assign({}, edge.node.frontmatter, {
                   description: edge.node.excerpt,

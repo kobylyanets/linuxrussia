@@ -72,7 +72,7 @@ const SubscribeBlock = () => {
 
       <div className="block">
         <p className="is-mb-2 has-text-weight-semibold">
-          Подписывайтесь на RSS ленту:
+          Подписывайтесь на основную RSS ленту:
         </p>
 
         <ExternalLink className="button is-rss" to="/rss.xml">
@@ -82,6 +82,20 @@ const SubscribeBlock = () => {
           <span>Последние статьи</span>
         </ExternalLink>
       </div>
+
+      <div className="block">
+        <p className="is-mb-2 has-text-weight-semibold">
+          Подписывайтесь на RSS ленту заметок:
+        </p>
+
+        <ExternalLink className="button is-rss" to="/notices-rss.xml">
+          <span className="icon">
+            <i className="fa fa-rss" />
+          </span>
+          <span>Последние заметки</span>
+        </ExternalLink>
+      </div>
+
     </SideBarBlock>
   );
 };
