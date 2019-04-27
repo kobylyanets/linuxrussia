@@ -10,6 +10,11 @@ module.exports = {
 
     twitter: 'https://twitter.com/LinuxRussia',
     author: 'Edward Kobylyanets',
+
+    notice_title: 'Заметки о Linux / Ubuntu',
+    notice_description: 'Своеобразный блокнот с короткими заметками о Linux / Ubuntu',
+    notice_site_url: 'https://linuxrussia.com/notices',
+    notice_path_url: 'https://linuxrussia.com/notice'
   },
   plugins: [
     `gatsby-plugin-remove-trailing-slashes`,
@@ -193,7 +198,6 @@ module.exports = {
                 edges {
                   node {
                     excerpt
-                    html
                     frontmatter {
                       title
                       date
@@ -213,11 +217,72 @@ module.exports = {
             }
           `,
             output: "/rss.xml",
-            title: "Gatsby RSS Feed",
+            title: "LinuxRussia RSS Feed",
           },
         ],
       },
     },
+
+    {
+      resolve: `gatsby-plugin-feed`,
+      options: {
+        query: `
+        {
+          site {
+            siteMetadata {
+              site_url: notice_site_url
+              title: notice_title
+              description: notice_description
+              siteUrl: notice_path_url
+            }
+          }
+        }
+      `,
+        feeds: [
+          {
+            serialize: ({ query: { site, allMarkdownRemark } }) => {
+              return allMarkdownRemark.edges.map(edge => {
+                return Object.assign({}, edge.node.frontmatter, {
+                  description: edge.node.excerpt,
+                  author: edge.node.frontmatter.author,
+                  date: edge.node.frontmatter.date,
+                  url: site.siteMetadata.siteUrl + edge.node.frontmatter.url + '.html',
+                  guid: site.siteMetadata.siteUrl + edge.node.frontmatter.url + '.html',
+                })
+              })
+            },
+            query: `
+            {
+              allMarkdownRemark(
+                limit: 1000,
+                sort: { order: DESC, fields: [frontmatter___date] },
+                filter: {
+                  fileAbsolutePath: { regex: "/notices/" }
+                  frontmatter: { status: { ne: "template" } }
+                }
+              ) {
+                edges {
+                  node {
+                    excerpt
+                    frontmatter {
+                      title
+                      date
+                      url
+                      author
+                    }
+                  }
+                }
+              }
+            }
+          `,
+            output: "/notices-rss.xml",
+            title: "LinuxRussia Notices RSS Feed",
+          },
+        ],
+      },
+    },
+
+
     // this (optional) plugin enables Progressive Web App + Offline functionality
     // To learn more, visit: https://gatsby.app/offline
     // 'gatsby-plugin-offline',
