@@ -15,11 +15,13 @@ import openvpnPostsConfig from './config/openvpn.posts.config';
 import LastComments from './LastComments';
 import AttentionBetaBlock from './AttentionBetaBlock';
 import LastNoticesBlock from './LastNoticesBlock';
+import GoogleAd from '../advertising/Adsense';
 
 const SideBar = () => {
   return (
     <div className="column is-4">
       <SearchBar />
+      <GoogleAd />
       <AttentionBetaBlock />
       <StatisticBlock />
       <SubscribeBlock />
