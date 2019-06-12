@@ -5,6 +5,7 @@
  */
 const { getPostUrl, getNoticeUrl } =  require('./src/utils/urlUtils');
 const { CategoriesInfo } = require('./src/configs/categoriesConfig');
+const fs = require('fs-extra');
 const path = require(`path`);
 // const { createFilePath } = require(`gatsby-source-filesystem`);
 const util = require('util');
@@ -214,4 +215,9 @@ exports.createPages = ({ actions, graphql }) => {
       );
     }
   );
+};
+
+exports.onPostBuild = () => {
+  // copy Authorized Digital Sellers file to root of site
+  fs.copySync(path.join(__dirname, '/src/ads.txt'), path.join(__dirname, '/public/ads.txt'));
 };
