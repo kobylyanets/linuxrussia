@@ -62,8 +62,8 @@ module.exports = {
           {
             resolve: `gatsby-remark-autolink-headers`,
             options: {
-              maintainCase: false,
-              removeAccents: false,
+              maintainCase: true,
+              removeAccents: true,
             },
           },
           'gatsby-remark-prismjs',
