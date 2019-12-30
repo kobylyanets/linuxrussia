@@ -9,14 +9,19 @@ import { getAbsoluteNoticeUrl } from '../utils/urlUtils';
 import ExternalLink from '../components/core/ExternalLink';
 import logo from '../images/notices-logo.png';
 
-
 function Notice(props) {
   const post = props.data.post;
   const { title, date, author, url } = post.frontmatter;
 
   return (
     <Layout>
-      <SEO imageURL={logo} title={title} description={post.excerpt} url={url} isBlogPost />
+      <SEO
+        imageURL={logo}
+        title={title}
+        description={post.excerpt}
+        url={url}
+        isBlogPost
+      />
       <article>
         <PostHeader
           title={title}
@@ -58,6 +63,10 @@ function Notice(props) {
         <hr style={{ height: '4px' }} />
 
         <div id="mc-container" />
+        <a id="mc-link" href="http://cackle.me">
+          Комментарии для сайта <b style={{color: '#4FA3DA'}}>Cackl</b>
+          <b style={{color: '#F65077'}}>e</b>
+        </a>
       </article>
     </Layout>
   );
