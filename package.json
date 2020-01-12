@@ -34,6 +34,7 @@
     "react-adsense": "^0.1.0",
     "react-dom": "^16.8.0",
     "react-helmet": "^5.2.0",
+    "react-scroll-up-button": "^1.6.4",
     "react-share": "^2.4.0"
   },
   "keywords": [
