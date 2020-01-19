@@ -27,9 +27,9 @@ class TopMenu extends React.Component {
             <Link className="navbar-item is-size-4-desktop" to="/">
               LinuxRussia.com
             </Link>
-            <div className="navbar-item">
-              <span className="tag is-danger">Beta</span>
-            </div>
+            {/*<div className="navbar-item">*/}
+            {/*  <span className="tag is-danger">Beta</span>*/}
+            {/*</div>*/}
             <a
               role="button"
               className={`navbar-burger burger ${cssActiveClass}`}

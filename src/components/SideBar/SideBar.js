@@ -22,7 +22,6 @@ const SideBar = () => {
     <div className="column is-4">
       <SearchBar />
       <GoogleAd />
-      <AttentionBetaBlock />
       <StatisticBlock />
       <SubscribeBlock />
       <LastNoticesBlock />

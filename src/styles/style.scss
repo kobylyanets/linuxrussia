@@ -2,7 +2,7 @@
 @import './variables';
 
 // Importing font awesome
-$fa-font-path: "../../node_modules/@fortawesome/fontawesome-free/webfonts";
+$fa-font-path: '../../node_modules/@fortawesome/fontawesome-free/webfonts';
 @import '../../node_modules/@fortawesome/fontawesome-free/scss/fontawesome';
 @import '../../node_modules/@fortawesome/fontawesome-free/scss/regular';
 @import '../../node_modules/@fortawesome/fontawesome-free/scss/solid';
@@ -32,11 +32,11 @@ $fa-font-path: "../../node_modules/@fortawesome/fontawesome-free/webfonts";
 }
 
 .title > a {
-  color: $grey-darker
+  color: $grey-darker;
 }
 
 .title > a:hover {
-  color: $blue
+  color: $blue;
 }
 
 .side-title {
@@ -46,4 +46,21 @@ $fa-font-path: "../../node_modules/@fortawesome/fontawesome-free/webfonts";
 
 span > .fa-telegram {
   color: #0088cc !important;
+}
+
+.ScrollUpButton {
+  &__Container {
+    position: fixed;
+    right: -100px;
+    bottom: 10px;
+    transition: right 0.7s;
+    cursor: pointer;
+    &:focus {
+      outline: none;
+    }
+  }
+
+  &__Toggled {
+    right: 10px;
+  }
 }

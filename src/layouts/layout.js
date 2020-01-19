@@ -1,5 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import ScrollUpButton from 'react-scroll-up-button';
 
 import Header from '../components/header';
 import '../styles/style.scss';
@@ -24,6 +25,17 @@ const Layout = ({ children }) => (
         </div>
       </div>
     </section>
+    <ScrollUpButton
+      ShowAtPosition={800}
+      ContainerClassName="ScrollUpButton__Container"
+      TransitionClassName="ScrollUpButton__Toggled"
+    >
+      <div>
+        <span className="button is-info">
+          <i className="fa fa-chevron-up" />
+        </span>
+      </div>
+    </ScrollUpButton>
     <Footer />
   </>
 );
