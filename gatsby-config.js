@@ -288,18 +288,24 @@ module.exports = {
           {
             name: 'ru',
             filterNodes: node => node.frontmatter && node.frontmatter.status === 'published',
+          },
+          {
+            name: 'en',
+            filterNodes: node => node.frontmatter && node.frontmatter.status === 'published',
           }
         ],
         fields: [
           { name: 'title', store: true, attributes: { boost: 20 } },
           { name: 'content' },
           { name: 'url', store: true },
+          { name: 'isNotice', store: true },
         ],
         resolvers: {
           MarkdownRemark: {
             title: node => node.frontmatter.title,
             content: node => node.rawMarkdownBody,
             url: node => node.frontmatter.url,
+            isNotice: node => node.fileAbsolutePath && node.fileAbsolutePath.includes('/notices/'),
           },
         }
       }
