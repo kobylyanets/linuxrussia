@@ -5,10 +5,12 @@
   "author": "Edward Kobylyanets <kobylyanets@gmail.com>",
   "dependencies": {
     "@fortawesome/fontawesome-free": "^5.7.1",
+    "@pacote/react-use-outside": "^1.1.1",
     "bulma": "^0.7.4",
     "gatsby": "^2.0.118",
     "gatsby-image": "^2.0.29",
     "gatsby-plugin-feed": "^2.0.15",
+    "gatsby-plugin-lunr": "^1.5.2",
     "gatsby-plugin-manifest": "^2.0.17",
     "gatsby-plugin-offline": "^2.0.23",
     "gatsby-plugin-react-helmet": "^3.0.6",
