@@ -3,16 +3,15 @@ import AdSense from 'react-adsense';
 
 const GoogleAd = () => (
   <AdSense.Google
-    client='ca-pub-2178539334794330'
-    slot='8568996919'
+    client="ca-pub-2178539334794330"
+    slot="8568996919"
     style={{ display: 'block' }}
-    format='auto'
-    responsive='true'
+    format="auto"
+    responsive="true"
   />
 );
 
 export default GoogleAd;
-
 
 // `<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
 // <!-- sidebar_top -->

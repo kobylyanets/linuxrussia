@@ -95,7 +95,6 @@ const SubscribeBlock = () => {
           <span>Последние заметки</span>
         </ExternalLink>
       </div>
-
     </SideBarBlock>
   );
 };

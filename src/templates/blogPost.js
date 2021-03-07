@@ -69,8 +69,8 @@ function BlogPost(props) {
 
         <div id="mc-container" />
         <a id="mc-link" href="http://cackle.me">
-          Комментарии для сайта <b style={{color: '#4FA3DA'}}>Cackl</b>
-          <b style={{color: '#F65077'}}>e</b>
+          Комментарии для сайта <b style={{ color: '#4FA3DA' }}>Cackl</b>
+          <b style={{ color: '#F65077' }}>e</b>
         </a>
       </article>
     </Layout>

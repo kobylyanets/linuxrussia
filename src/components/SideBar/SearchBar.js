@@ -7,7 +7,9 @@ import { useOutside } from '@pacote/react-use-outside';
 
 const findByLUNR = (query, lang) => {
   const { index, store } = (window.__LUNR__ && window.__LUNR__[lang]) || {};
-  return query && !isEmpty(index) && !isEmpty(store) ? index.search(query).map(({ ref }) => store[ref]) : [];
+  return query && !isEmpty(index) && !isEmpty(store)
+    ? index.search(query).map(({ ref }) => store[ref])
+    : [];
 };
 
 const search = query => {
@@ -25,11 +27,14 @@ const SearchBar = ({ limit = 10 }) => {
   const [isActive, setActive] = useState(false);
 
   const ref = useOutside('click', () => {
-    setActive(false)
+    setActive(false);
   });
 
   return (
-    <div ref={ref} className={`block navbar-item ${isActive ? 'is-active' : ''}`}>
+    <div
+      ref={ref}
+      className={`block navbar-item ${isActive ? 'is-active' : ''}`}
+    >
       <div className="control has-icons-right" style={{ width: '100%' }}>
         <input
           className="input is-info"
@@ -42,7 +47,7 @@ const SearchBar = ({ limit = 10 }) => {
             setActive(!!value);
           }}
           onFocus={() => {
-            setActive(!!query)
+            setActive(!!query);
           }}
         />
         <span className="icon is-small is-right">
