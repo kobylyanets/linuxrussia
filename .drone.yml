@@ -11,8 +11,10 @@ pipeline:
       - /tmp/cache:/cache
 
   node:
-    image: node:lts
+    image: node:fermium
     commands:
+      - node -v
+      - yarn -v
       - yarn install
 
   rebuild-cache:
