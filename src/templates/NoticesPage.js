@@ -43,11 +43,12 @@ const NoticesPage = ({ data, ...props }) => {
   };
 
   const title = 'Заметки о Linux / Ubuntu';
-  const description = 'Своеобразный блокнот с короткими заметками о Linux / Ubuntu';
+  const description =
+    'Своеобразный блокнот с короткими заметками о Linux / Ubuntu';
 
   return (
     <Layout>
-      <SEO imageURL={logo} title={title} description={description}/>
+      <SEO imageURL={logo} title={title} description={description} />
       <div className="title">{title}</div>
       <div className="subtitle">{description}</div>
 

@@ -123,7 +123,7 @@ module.exports = {
                 node {
                   path
                   context {
-                    lastmod(formatString: "YYYY-MM-DD")
+                    lastmod
                   }
                 }
               }
@@ -134,11 +134,12 @@ module.exports = {
             const isMainPage = edge.node.path === '/';
             const changefreq = isMainPage ? 'daily' : 'monthly';
             const priority = isMainPage ? 0.9 : 0.8;
+            const lastmod = edge.node.context.lastmod ? edge.node.context.lastmod.slice(0,10) : null;
             return {
               url: site.siteMetadata.siteUrl + edge.node.path,
               changefreq,
               priority,
-              lastmod: edge.node.context.lastmod
+              lastmod,
             };
           }),
       },
