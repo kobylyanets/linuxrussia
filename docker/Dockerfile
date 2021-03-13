@@ -1,4 +1,4 @@
-FROM node:lts
+FROM node:fermium
 
 ARG BUILD_PATH
 ENV BUILD_PATH /opt/linuxrussia
