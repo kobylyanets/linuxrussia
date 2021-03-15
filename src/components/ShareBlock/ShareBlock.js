@@ -1,10 +1,23 @@
 import React from 'react';
 import {
+  FacebookShareButton,
+  FacebookIcon,
   TwitterShareButton,
   TwitterIcon,
-
   VKShareButton,
   VKIcon,
+  OKShareButton,
+  OKIcon,
+  MailruShareButton,
+  MailruIcon,
+  TelegramShareButton,
+  TelegramIcon,
+  WhatsappShareButton,
+  WhatsappIcon,
+  ViberShareButton,
+  ViberIcon,
+  PocketShareButton,
+  PocketIcon,
 } from 'react-share';
 
 const ShareBlock = ({ sharedUrl, title }) => {
@@ -14,43 +27,46 @@ const ShareBlock = ({ sharedUrl, title }) => {
     <>
       <h4 className="title is-size-5 is-mb-3 is-uppercase">Поделиться:</h4>
       <div className="buttons">
-        <VKShareButton url={sharedUrl} title={title} className="button">
-          <VKIcon size={ICON_SIZE} borderRadius={ICON_BORDER_RADIUS} />
-        </VKShareButton>
+        <FacebookShareButton url={sharedUrl} quote={title} className="button">
+          <FacebookIcon size={ICON_SIZE} borderRadius={ICON_BORDER_RADIUS} />
+        </FacebookShareButton>
 
         <TwitterShareButton url={sharedUrl} title={title} className="button">
           <TwitterIcon size={ICON_SIZE} borderRadius={ICON_BORDER_RADIUS} />
         </TwitterShareButton>
 
-        {/*<TelegramShareButton*/}
-        {/*  url={sharedUrl}*/}
-        {/*  title={title}*/}
-        {/*  className="button is-telegram"*/}
-        {/*>*/}
-        {/*  <span className="icon">*/}
-        {/*    <i className="fab fa-telegram-plane fa-lg" />*/}
-        {/*  </span>*/}
-        {/*</TelegramShareButton>*/}
+        <VKShareButton url={sharedUrl} title={title} className="button">
+          <VKIcon size={ICON_SIZE} borderRadius={ICON_BORDER_RADIUS} />
+        </VKShareButton>
 
-        {/*<OKShareButton*/}
-        {/*  url={sharedUrl}*/}
-        {/*  title={title}*/}
-        {/*  className="button is-odnoklassniki"*/}
-        {/*>*/}
-        {/*  <span className="icon">*/}
-        {/*    <i className="fab fa-odnoklassniki fa-lg" />*/}
-        {/*  </span>*/}
-        {/*</OKShareButton>*/}
+        <OKShareButton url={sharedUrl} title={title} className="button">
+          <OKIcon size={ICON_SIZE} borderRadius={ICON_BORDER_RADIUS} />
+        </OKShareButton>
 
-        {/*<FacebookShareButton*/}
-        {/*  url={sharedUrl}*/}
-        {/*  quote={title}*/}
-        {/*  className="button is-facebook"*/}
-        {/*>*/}
-        {/*  <span className="icon">*/}
-        {/*    <i className="fab fa-facebook-f fa-lg" />*/}
-        {/*  </span>*/}
-        {/*</FacebookShareButton>*/}
+        <MailruShareButton url={sharedUrl} title={title} className="button">
+          <MailruIcon size={ICON_SIZE} borderRadius={ICON_BORDER_RADIUS} />
+        </MailruShareButton>
+
+        <TelegramShareButton url={sharedUrl} title={title} className="button">
+          <TelegramIcon size={ICON_SIZE} borderRadius={ICON_BORDER_RADIUS} />
+        </TelegramShareButton>
+
+        <WhatsappShareButton
+          url={sharedUrl}
+          title={title}
+          separator=":: "
+          className="button"
+        >
+          <WhatsappIcon size={ICON_SIZE} borderRadius={ICON_BORDER_RADIUS} />
+        </WhatsappShareButton>
+
+        <ViberShareButton url={sharedUrl} title={title} className="button">
+          <ViberIcon size={ICON_SIZE} borderRadius={ICON_BORDER_RADIUS} />
+        </ViberShareButton>
+
+        <PocketShareButton url={sharedUrl} title={title} className="button">
+          <PocketIcon size={ICON_SIZE} borderRadius={ICON_BORDER_RADIUS} />
+        </PocketShareButton>
       </div>
     </>
   );
