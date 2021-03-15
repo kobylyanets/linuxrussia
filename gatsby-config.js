@@ -74,13 +74,6 @@ module.exports = {
             },
           },
           `gatsby-remark-autolink-headers`,
-          // {
-          //   resolve: `gatsby-remark-autolink-headers`,
-          //   options: {
-          //     maintainCase: false,
-          //     removeAccents: true,
-          //   },
-          // },
           'gatsby-remark-prismjs',
           {
             resolve: `gatsby-remark-images`,
@@ -108,6 +101,7 @@ module.exports = {
     {
       resolve: `gatsby-plugin-sitemap`,
       options: {
+        sitemapSize: 5000,
         exclude: [
           '/page/*',
           '/programs',
@@ -125,7 +119,6 @@ module.exports = {
           '/notices',
           '/notices/page/*'
         ],
-        xmlNs: 'xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"',
         query: `
           {
             site {
