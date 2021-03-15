@@ -1,3 +1,5 @@
+@import '../../node_modules/bulma/sass/utilities/functions';
+
 // VARIABLES
 //$icon-dimensions-large: 6rem;
 $content-blockquote-border-left: 5px solid hsl(348, 100%, 61%);
@@ -21,7 +23,7 @@ $mailru-invert: findColorInvert($mailru);
 $facebook: hsl(221, 44%, 41%);
 $facebook-invert: findColorInvert($facebook);
 
-$rss: hsl(19, 89, 54);
+$rss: hsl(19, 89%, 54%);
 $rss-invert: findColorInvert($rss);
 
 $custom-colors: (

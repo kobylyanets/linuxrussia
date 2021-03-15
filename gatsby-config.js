@@ -1,3 +1,5 @@
+const { getSrc } = require('gatsby-plugin-image');
+
 module.exports = {
   siteMetadata: {
     siteUrl: 'https://linuxrussia.com',
@@ -40,6 +42,7 @@ module.exports = {
         name: 'notices',
       },
     },
+    `gatsby-plugin-image`,
     `gatsby-transformer-sharp`,
     `gatsby-plugin-sharp`,
     {
@@ -60,12 +63,24 @@ module.exports = {
         'excerpt_separator': `<!-- more -->`,
         plugins: [
           {
-            resolve: `gatsby-remark-autolink-headers`,
+            resolve: `gatsby-remark-table-of-contents`,
             options: {
-              maintainCase: false,
-              removeAccents: true,
+              exclude: "Table of Contents",
+              tight: false,
+              ordered: false,
+              fromHeading: 1,
+              toHeading: 6,
+              className: "table-of-contents"
             },
           },
+          `gatsby-remark-autolink-headers`,
+          // {
+          //   resolve: `gatsby-remark-autolink-headers`,
+          //   options: {
+          //     maintainCase: false,
+          //     removeAccents: true,
+          //   },
+          // },
           'gatsby-remark-prismjs',
           {
             resolve: `gatsby-remark-images`,
@@ -73,7 +88,8 @@ module.exports = {
               // It's important to specify the maxWidth (in pixels) of
               // the content container as this plugin uses this as the
               // base for generating different widths of each image.
-              sizeByPixelDensity: true,
+              maxWidth: 590,
+              quality: 70,
             },
           },
           'gatsby-remark-static-images',
@@ -172,7 +188,7 @@ module.exports = {
                 return Object.assign({}, edge.node.frontmatter, {
                   description: `
                   <img 
-                    src="${site.siteMetadata.siteUrl + edge.node.frontmatter.featuredImage.childImageSharp.fluid.src}" 
+                    src="${site.siteMetadata.siteUrl + getSrc(edge.node.frontmatter.featuredImage)}" 
                     width="400px"
                     height="171px"
                     alt=""
@@ -206,9 +222,7 @@ module.exports = {
                       author
                       featuredImage {
                         childImageSharp {
-                          fluid {
-                            src
-                          }
+                          gatsbyImageData
                         }
                       }
                     }
