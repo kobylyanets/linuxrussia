@@ -90,3 +90,17 @@ span > .fa-telegram {
     margin-bottom: 0;
   }
 }
+
+.content {
+  h1, h2, h3, h4, h5, h6 {
+    scroll-margin-top: 52px!important;
+  }
+}
+
+#mc-container {
+  scroll-margin-top: 52px!important;
+}
+
+div[id^="cc-"] {
+  scroll-margin-top: 52px!important;
+}
