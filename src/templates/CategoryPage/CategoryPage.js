@@ -98,9 +98,7 @@ export const query = graphql`
             featuredImage {
               id
               childImageSharp {
-                fluid {
-                  ...GatsbyImageSharpFluid
-                }
+                gatsbyImageData
               }
             }
           }
