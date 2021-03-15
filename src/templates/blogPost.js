@@ -3,7 +3,7 @@ import React from 'react';
 import Layout from '../layouts/layout';
 import { graphql } from 'gatsby';
 import PostHeader from '../components/postHeader';
-import Img from 'gatsby-image';
+import { GatsbyImage } from 'gatsby-plugin-image';
 import SEO from '../components/SEO/SEO';
 import ShareBlock from '../components/ShareBlock/ShareBlock';
 import { getAbsolutePostUrl } from '../utils/urlUtils';
@@ -30,7 +30,12 @@ function BlogPost(props) {
         isBlogPost
       />
       <article>
-        {featuredImage && <Img fluid={featuredImage.childImageSharp.fluid} />}
+        {featuredImage && (
+          <GatsbyImage
+            image={featuredImage.childImageSharp.gatsbyImageData}
+            alt=""
+          />
+        )}
         <PostHeader
           title={title}
           date={date}
@@ -92,9 +97,7 @@ export const query = graphql`
           id
           publicURL
           childImageSharp {
-            fluid {
-              ...GatsbyImageSharpFluid
-            }
+            gatsbyImageData
           }
         }
       }

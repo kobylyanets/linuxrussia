@@ -7,13 +7,28 @@ $fa-font-path: '../../node_modules/@fortawesome/fontawesome-free/webfonts';
 @import '../../node_modules/@fortawesome/fontawesome-free/scss/regular';
 @import '../../node_modules/@fortawesome/fontawesome-free/scss/solid';
 @import '../../node_modules/@fortawesome/fontawesome-free/scss/brands';
-@import '../../node_modules/prismjs/themes/prism-tomorrow.css';
 
 // Importing Bulma from node_modules
 @import '../../node_modules/bulma/bulma';
-
 // Importing Spacing Helpers for Bulma
 @import './spacing';
+
+.content .tag, .content .number {
+  display: inline;
+  padding: inherit;
+  font-size: inherit;
+  line-height: inherit;
+  text-align: inherit;
+  vertical-align: inherit;
+  border-radius: inherit;
+  font-weight: inherit;
+  white-space: inherit;
+  background: inherit;
+  margin: inherit;
+}
+
+// Prism
+@import '../../node_modules/prismjs/themes/prism-tomorrow.css';
 
 .post-info {
   font-size: 0.875em !important;

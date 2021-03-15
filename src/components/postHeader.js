@@ -1,6 +1,6 @@
 import React from 'react';
 import { Link } from 'gatsby';
-import Img from 'gatsby-image';
+import { GatsbyImage } from 'gatsby-plugin-image';
 import { getCategoryLabel } from '../utils/categoryUtils';
 import PropTypes from 'prop-types';
 import { getNoticeUrl, getPostUrl } from '../utils/urlUtils';
@@ -31,7 +31,12 @@ const PostHeader = ({
   const titleWrapProps = url ? { to: postUrl } : {};
   return (
     <>
-      {featuredImage && <Img fluid={featuredImage.childImageSharp.fluid} />}
+      {featuredImage && (
+        <GatsbyImage
+          image={featuredImage.childImageSharp.gatsbyImageData}
+          alt=""
+        />
+      )}
 
       <div className="title is-size-3">
         <TitleWrap {...titleWrapProps}>{title}</TitleWrap>
