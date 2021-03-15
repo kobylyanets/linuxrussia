@@ -65,12 +65,12 @@ module.exports = {
           {
             resolve: `gatsby-remark-table-of-contents`,
             options: {
-              exclude: "Table of Contents",
+              exclude: 'Оглавление',
               tight: false,
               ordered: false,
               fromHeading: 1,
-              toHeading: 6,
-              className: "table-of-contents"
+              toHeading: 4,
+              className: 'table-of-contents'
             },
           },
           `gatsby-remark-autolink-headers`,

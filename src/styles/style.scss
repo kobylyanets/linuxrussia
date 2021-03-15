@@ -79,3 +79,14 @@ span > .fa-telegram {
     right: 10px;
   }
 }
+
+.table-of-contents {
+  li > p {
+    margin-bottom: 0 !important;
+  }
+
+  ul ul {
+    margin-top: 0;
+    margin-bottom: 0;
+  }
+}
