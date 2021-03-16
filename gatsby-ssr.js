@@ -8,8 +8,13 @@ const React = require(`react`);
 
 // You can delete this file if you're not using it
 
-exports.onRenderBody = ({ setPostBodyComponents }) => {
+export const onRenderBody = ({ setPostBodyComponents }) => {
   return setPostBodyComponents([
-    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+    <script
+      async
+      src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"
+    />,
   ]);
 };
+
+export { wrapRootElement } from './gatsby-browser';

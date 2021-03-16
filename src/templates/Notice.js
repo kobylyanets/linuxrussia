@@ -8,6 +8,7 @@ import ShareBlock from '../components/ShareBlock/ShareBlock';
 import { getAbsoluteNoticeUrl } from '../utils/urlUtils';
 import ExternalLink from '../components/core/ExternalLink';
 import logo from '../images/notices-logo.png';
+import { LightboxWrapper } from '../components/LightboxWrapper/LightboxWrapper';
 
 function Notice(props) {
   const post = props.data.post;
@@ -32,10 +33,12 @@ function Notice(props) {
           type="Notice"
         />
 
-        <div
-          className="content"
-          dangerouslySetInnerHTML={{ __html: post.html }}
-        />
+        <LightboxWrapper>
+          <div
+            className="content"
+            dangerouslySetInnerHTML={{ __html: post.html }}
+          />
+        </LightboxWrapper>
 
         <hr style={{ height: '2px' }} />
 

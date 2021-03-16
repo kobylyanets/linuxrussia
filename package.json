@@ -36,7 +36,8 @@
     "react-helmet": "^6.1.0",
     "react-scroll-up-button": "^1.6.4",
     "react-share": "^4.4.0",
-    "sass": "^1.32.8"
+    "sass": "^1.32.8",
+    "simple-react-lightbox": "^3.6.4"
   },
   "keywords": [
     "linuxrussia"

@@ -3,7 +3,8 @@
  *
  * See: https://www.gatsbyjs.org/docs/browser-apis/
  */
-
+import SimpleReactLightbox from 'simple-react-lightbox';
+import React from 'react';
 /**
  * Флаг, который обозначает, что скрипт комментариев добавлен в HEAD.
  * @type {boolean}
@@ -19,7 +20,7 @@ const injectCackleCommentsScript = () => {
   s.parentNode.insertBefore(mc, s.nextSibling);
 };
 
-exports.onRouteUpdate = function({ location }) {
+export const onRouteUpdate = ({ location }) => {
   // Инициализация компонента комментариев нужно делать отдельно, иначе приложение упадет.
   window.cackle_widget = [];
   if (document.querySelector(`#mc-container`) !== null) {
@@ -57,3 +58,8 @@ const initWidget = (flag = false) => {
   typeof window.Cackle.bootstrap === 'function' &&
   window.Cackle.bootstrap(flag);
 };
+
+// eslint-disable-next-line react/prop-types
+export const wrapRootElement = ({ element }) => (
+  <SimpleReactLightbox>{element}</SimpleReactLightbox>
+);
