@@ -1,6 +1,7 @@
 import React from 'react';
 
 import Layout from '../layouts/layout';
+import {LightboxWrapper} from '../components/LightboxWrapper/LightboxWrapper'
 import { graphql } from 'gatsby';
 import PostHeader from '../components/postHeader';
 import { GatsbyImage } from 'gatsby-plugin-image';
@@ -45,10 +46,12 @@ function BlogPost(props) {
           category={category}
         />
 
-        <div
-          className="content"
-          dangerouslySetInnerHTML={{ __html: post.html }}
-        />
+        <LightboxWrapper>
+          <div
+            className="content"
+            dangerouslySetInnerHTML={{ __html: post.html }}
+          />
+        </LightboxWrapper>
 
         <hr style={{ height: '2px' }} />
         <h4 className="title is-size-5 is-mb-3 is-uppercase">
