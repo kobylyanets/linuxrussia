@@ -7,7 +7,7 @@ import { getNoticeUrl, getPostUrl } from '../utils/urlUtils';
 
 const PostHeaderItem = ({ iconClasses, text }) => {
   return (
-    <span className="inline">
+    <span className="is-inline-block">
       <i className={`${iconClasses} icon`} />
       <span>{text}</span>
     </span>
@@ -60,7 +60,7 @@ const PostHeader = ({
           <PostHeaderItem iconClasses={'far fa-comments'} text={comments} />
         )}
 
-        <span className="inline">
+        <span className="is-inline-block">
           <Link className="has-text-grey" to={`${postUrl}#mc-container`}>
             <i className={`far fa-comments icon`} />
             <span className="cackle-comment-count" data-cackle-url={postUrl} />
