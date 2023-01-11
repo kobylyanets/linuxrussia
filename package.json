@@ -25,7 +25,7 @@
     "gatsby-remark-static-images": "^1.2.1",
     "gatsby-remark-table-of-contents": "^1.0.0",
     "gatsby-source-filesystem": "^3.0.0",
-    "gatsby-transformer-remark": "^3.0.0",
+    "gatsby-transformer-remark": "^5.25.1",
     "gatsby-transformer-sharp": "^3.0.0",
     "lodash.isempty": "^4.4.0",
     "prismjs": "^1.23.0",
